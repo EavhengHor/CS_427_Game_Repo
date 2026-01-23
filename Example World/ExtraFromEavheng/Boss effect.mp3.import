@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbhtrpopa4dag"
+path="res://.godot/imported/Boss effect.mp3-65236cc7cc464bf95e68b159fb73cfa5.mp3str"
+
+[deps]
+
+source_file="res://Example World/ExtraFromEavheng/Boss effect.mp3"
+dest_files=["res://.godot/imported/Boss effect.mp3-65236cc7cc464bf95e68b159fb73cfa5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
