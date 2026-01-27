@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctf6vn3khqof6"]
+
+[ext_resource type="Script" uid="uid://5lfybdt880tv" path="res://Example World/Scripts/target.gd" id="1_2rcyi"]
+[ext_resource type="Texture2D" uid="uid://co7mn4nyn3xe3" path="res://Example World/ExtraFromEavheng/Screenshot 2025-12-16 at 11.22.17 in the morning.png" id="2_2tgdx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_42kq6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5lr7v"]
+albedo_texture = ExtResource("2_2tgdx")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qysmk"]
+points = PackedVector3Array(-0.025, -0.101996, -0.12141, 0.025, 0.0205553, 0.164571, 0.025, 0.0514205, 0.159416, 0.025, -0.0205553, -0.164571, -0.025, 0.155429, -0.0194134, -0.025, -0.12141, 0.101996, 0.025, -0.164571, 0.0205553, 0.025, 0.159448, -0.0513984, -0.025, 0.101996, 0.12141, -0.025, 0.0728457, -0.140853, 0.025, 0.149168, 0.0771136, 0.025, -0.128551, -0.107996, -0.025, -0.155429, -0.0194134, 0.025, -0.107996, 0.128551, -0.025, -0.0194134, 0.155429, 0.025, 0.0874084, -0.143984, -0.025, 0.135985, -0.0825524, -0.025, -0.0194134, -0.155429, -0.025, 0.15056, 0.0485638, 0.0201895, 0.167246, 0.0208894, 0.025, -0.0771308, -0.149139, 0.025, -0.0514205, 0.159416, -0.025, -0.0825524, 0.135985, 0.025, -0.159416, -0.0514205, -0.025, -0.135985, -0.0825524, -0.025, 0.0485638, 0.15056, -0.025, -0.15056, 0.0485638, 0.025, -0.143984, 0.0874084, 0.025, 0.0874084, 0.143984, 0.025, 0.0514205, -0.159416, 0.025, 0.128576, -0.108017, 0.0199534, 0.129165, 0.108512)
+
+[node name="Target" type="StaticBody3D" groups=["Target"]]
+collision_layer = 32
+script = ExtResource("1_2rcyi")
+
+[node name="targetA2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.023227433, 1.0113087, 0.025406212, -0.02103417, 0.096746415, -0.24960119, -0.27742392, -0.0920074, 0.016797518, 0.07407758, 0.34323227, -0.09822121)
+mesh = SubResource("PlaneMesh_42kq6")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_5lr7v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034007132, 0.22587454, -0.009500414)
+shape = SubResource("ConvexPolygonShape3D_qysmk")

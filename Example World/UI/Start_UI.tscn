@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3ehylernk46p"]
+
+[ext_resource type="Texture2D" uid="uid://dxsynf14s3j6x" path="res://Example World/Models/Boxes/cardboard_box1_Box_21-256x256.png" id="1_4r6mo"]
+[ext_resource type="Texture2D" uid="uid://pixagnnn56ld" path="res://Example World/ExtraFromEavheng/Screenshot 2026-01-27 at 11.17.01 in the morning.png" id="1_a7ua3"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PotatoBorder_Background" type="NinePatchRect" parent="Control"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.2110004
+anchor_top = 3.9400003
+anchor_right = 7.2110004
+anchor_bottom = 3.9400003
+offset_left = 629.55994
+offset_top = -154.59999
+offset_right = 874.56
+offset_bottom = 81.40001
+rotation = 0.30851114
+texture = ExtResource("1_a7ua3")
+
+[node name="PotatoBorder_Background2" type="NinePatchRect" parent="Control"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.2110004
+anchor_top = 3.9400003
+anchor_right = 7.2110004
+anchor_bottom = 3.9400003
+offset_left = -272.44
+offset_top = 259.40002
+offset_right = -27.439941
+offset_bottom = 495.4
+rotation = -0.3084265
+texture = ExtResource("1_a7ua3")
+
+[node name="Cardboard_Background" type="NinePatchRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -21.0
+offset_right = 1133.0
+offset_bottom = 629.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4r6mo")
+region_rect = Rect2(24.5, 21.5, 209, 213)
+axis_stretch_horizontal = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Cardboard_Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -20.0
+offset_right = 71.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control/Cardboard_Background/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Button2" type="Button" parent="Control/Cardboard_Background/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
