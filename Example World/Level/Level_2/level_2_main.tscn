@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://div2ftvf03udf"]
+[gd_scene format=3 uid="uid://div2ftvf03udf"]
 
 [ext_resource type="Environment" uid="uid://bqp54syxqnqww" path="res://Player_Controller/world_environment.tres" id="1_0lq08"]
 [ext_resource type="Texture2D" uid="uid://mutuvrmwka7a" path="res://Example World/ExtraFromEavheng/cea9746f-90a6-4574-8e54-b5da1f088e2c.jpg" id="2_ewghp"]
@@ -42,342 +42,342 @@ albedo_texture = ExtResource("2_ewghp")
 [sub_resource type="SphereShape3D" id="SphereShape3D_82y80"]
 radius = 6.716
 
-[node name="Level_2" type="Node3D" groups=["World"]]
+[node name="Level_2" type="Node3D" unique_id=973198178 groups=["World"]]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1523628884]
 environment = ExtResource("1_0lq08")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1656379153]
 transform = Transform3D(-0.8435731, -0.44660202, -0.2982133, -0.28327402, -0.10170801, 0.9536306, -0.45622405, 0.8889332, -0.040712614, -4.3793087, 6.659208, 6.130226)
 layers = 524289
 light_color = Color(1, 1, 0.780392, 1)
 shadow_enabled = true
 
-[node name="Enemy" type="Node3D" parent="."]
+[node name="Enemy" type="Node3D" parent="." unique_id=1720236541]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 58.925888, -9.919525, -514.04517)
 visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy" unique_id=1456499729]
 transform = Transform3D(-0.01036708, 0, -0.9999463, 0, 1, 0, 0.9999463, 0, -0.01036708, -176.45059, 3.1994789, -14.705748)
 mesh = SubResource("SphereMesh_4r2lv")
 surface_material_override/0 = SubResource("StandardMaterial3D_bo61t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy" unique_id=76990149]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4705776, 0)
 shape = SubResource("SphereShape3D_bk4di")
 
-[node name="Player_Character" parent="." instance=ExtResource("3_s0c21")]
+[node name="Player_Character" parent="." unique_id=83202563 instance=ExtResource("3_s0c21")]
 transform = Transform3D(-0.9975065, 0, -0.07057485, 0, 1, 0, 0.07057485, 0, -0.9975065, 0.48244286, 0.26812816, -2.367126)
 
-[node name="LevelGeometry" type="CSGCombiner3D" parent="."]
+[node name="LevelGeometry" type="CSGCombiner3D" parent="." unique_id=1466506926]
 use_collision = true
 
-[node name="Floor" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Floor" type="StaticBody3D" parent="LevelGeometry" unique_id=1098825832]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeometry/Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeometry/Floor" unique_id=759271299]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 96.50089)
 mesh = SubResource("PlaneMesh_etv36")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeometry/Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeometry/Floor" unique_id=1715989744]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 96.643745)
 shape = SubResource("BoxShape3D_etv36")
 
-[node name="Wall1" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall1" type="StaticBody3D" parent="LevelGeometry" unique_id=911529091]
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall1"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall1" unique_id=1894075141]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57249737, 4.705902, 14.260482)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall2" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall2" type="StaticBody3D" parent="LevelGeometry" unique_id=584428412]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.432344)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall2"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall2" unique_id=240232783]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.996831, 3.7507648, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall3" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall3" type="StaticBody3D" parent="LevelGeometry" unique_id=1598846276]
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall3"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall3" unique_id=1700710474]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall4" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall4" type="StaticBody3D" parent="LevelGeometry" unique_id=710300469]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.031784, 0, 16.179125)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall4"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall4" unique_id=1247046859]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall5" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall5" type="StaticBody3D" parent="LevelGeometry" unique_id=1827052908]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5110359, 0, 21.372505)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall5"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall5" unique_id=2037826701]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall6" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall6" type="StaticBody3D" parent="LevelGeometry" unique_id=317508822]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.480551, 0, 24.765371)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall6"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall6" unique_id=1609891668]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall7" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall7" type="StaticBody3D" parent="LevelGeometry" unique_id=25726454]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.649375, 0, 28.880928)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall7"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall7" unique_id=1873519662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall8" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall8" type="StaticBody3D" parent="LevelGeometry" unique_id=1226968956]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2055569, 0, 33.987194)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall8"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall8" unique_id=27321320]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall9" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall9" type="StaticBody3D" parent="LevelGeometry" unique_id=2034133586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5334511, 0, 37.423775)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall9"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall9" unique_id=19197550]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall10" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall10" type="StaticBody3D" parent="LevelGeometry" unique_id=1784035084]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6454353, 0, 43.890133)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall10"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall10" unique_id=749517414]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall11" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall11" type="StaticBody3D" parent="LevelGeometry" unique_id=1129989889]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 48.412724)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall11"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall11" unique_id=117564517]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall12" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall12" type="StaticBody3D" parent="LevelGeometry" unique_id=1062943991]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.792631, 0, 55.26759)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall12"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall12" unique_id=2118711749]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall13" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall13" type="StaticBody3D" parent="LevelGeometry" unique_id=1859775914]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 62.457344)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall13"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall13" unique_id=2104731214]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall14" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall14" type="StaticBody3D" parent="LevelGeometry" unique_id=568075171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0461092, 0, 69.34836)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall14"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall14" unique_id=1293200090]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall15" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall15" type="StaticBody3D" parent="LevelGeometry" unique_id=1596523412]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 74.6456)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall15"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall15" unique_id=1949497836]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall16" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall16" type="StaticBody3D" parent="LevelGeometry" unique_id=1725547560]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.59241, 0, 77.224884)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall16"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall16" unique_id=527768386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall17" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall17" type="StaticBody3D" parent="LevelGeometry" unique_id=1362392389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 81.267395)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall17"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall17" unique_id=1945509581]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall18" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall18" type="StaticBody3D" parent="LevelGeometry" unique_id=1094734392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3036175, 0, 89.336685)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall18"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall18" unique_id=572938050]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall19" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall19" type="StaticBody3D" parent="LevelGeometry" unique_id=1891132134]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 93.97777)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall19"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall19" unique_id=1508812655]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall20" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall20" type="StaticBody3D" parent="LevelGeometry" unique_id=1015419155]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 99.433426)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall20"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall20" unique_id=2051458458]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall21" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall21" type="StaticBody3D" parent="LevelGeometry" unique_id=995769084]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.294422, 0, 103.9616)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall21"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall21" unique_id=139477429]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall22" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall22" type="StaticBody3D" parent="LevelGeometry" unique_id=632760472]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9701939, 0, 111.25895)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall22"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall22" unique_id=1994440357]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall23" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall23" type="StaticBody3D" parent="LevelGeometry" unique_id=785860778]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2226067, 0, 118.26584)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall23"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall23" unique_id=1252672519]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall24" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall24" type="StaticBody3D" parent="LevelGeometry" unique_id=285475765]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4704285, 0, 127.266495)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall24"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall24" unique_id=2044143101]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall25" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall25" type="StaticBody3D" parent="LevelGeometry" unique_id=249217767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 133.34457)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall25"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall25" unique_id=540993850]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8858204, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall26" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall26" type="StaticBody3D" parent="LevelGeometry" unique_id=1954218288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7197247, 0, 140.35712)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall26"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall26" unique_id=1832488198]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall27" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall27" type="StaticBody3D" parent="LevelGeometry" unique_id=2031718172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.048029, 0, 147.94836)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall27"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall27" unique_id=780441177]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall28" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall28" type="StaticBody3D" parent="LevelGeometry" unique_id=776013650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1264248, 0, 159.06076)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall28"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall28" unique_id=1505062894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall29" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall29" type="StaticBody3D" parent="LevelGeometry" unique_id=1129073862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5326443, 0, 171.5382)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall29"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall29" unique_id=1914576481]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="Wall30" type="StaticBody3D" parent="LevelGeometry"]
+[node name="Wall30" type="StaticBody3D" parent="LevelGeometry" unique_id=696483964]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.923149, 0, 177.83905)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall30"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall30" unique_id=1652580921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
 material = SubResource("StandardMaterial3D_uptxv")
 
-[node name="physics_objects" type="Node3D" parent="."]
+[node name="physics_objects" type="Node3D" parent="." unique_id=1391691962]
 
-[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+[node name="BossMusic" type="AudioStreamPlayer" parent="." unique_id=2107181509]
 volume_db = -10.0
 
-[node name="Bot" type="CharacterBody3D" parent="."]
+[node name="Bot" type="CharacterBody3D" parent="." unique_id=901713133]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.482, 0.268, 7.955686)
 script = ExtResource("6_tpwnx")
 intro_sound = ExtResource("7_2j4m2")
 loop_sound = ExtResource("8_6gk2m")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Bot"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bot" unique_id=1284630048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3564782, 2.6585412)
 mesh = SubResource("SphereMesh_2w12e")
 surface_material_override/0 = SubResource("StandardMaterial3D_q8tgt")
 
-[node name="Label3D" type="Label3D" parent="Bot"]
+[node name="Label3D" type="Label3D" parent="Bot" unique_id=1051359049]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001172185, 0.97702885, -1.5453453)
 offset = Vector2(0, 1)
 billboard = 1
 text = "Catch me if u can"
 font_size = 72
 
-[node name="Area3D" type="Area3D" parent="Bot"]
+[node name="Area3D" type="Area3D" parent="Bot" unique_id=621249617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8187666, 0.88766336)
 collision_layer = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bot/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bot/Area3D" unique_id=620070740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31267834, 1.460474)
 shape = SubResource("SphereShape3D_82y80")
 
