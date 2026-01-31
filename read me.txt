@@ -1,15 +1,33 @@
- Created by Isaac from Chaff Games
+# 🎮 Catch the Potato
 
- ChaffGames.com
+A fun and fast-paced arcade game where you catch falling potatoes to score points! Test your reflexes and try to catch as many as you can before time runs out.
 
-Assets used for example:
 
-Kenny Blaster Kit - https://www.kenney.nl/assets/blaster-kit
 
-MIT Licence on the Code.
+> Place screenshots inside a `/screenshots` folder in this repository.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+---
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+## ▶️ Gameplay Video
 
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Watch the gameplay on YouTube:  
+👉 [Catch the Potato Gameplay](https://youtu.be/n9tM909tfhg?si=xaos5n-SQPbGuhLj)
+
+---
+
+## 🚀 Alpha Release
+
+**Current Version:** Alpha v0.1.0  
+
+### Alpha Features
+- Simple yet addictive gameplay
+- Basic UI and controls
+- Catch the falling potatoes to score points
+- Timer to challenge players
+
+### Known Limitations
+- Gameplay balance still in progress
+- Some bugs and performance issues may exist
+- Features and assets will evolve
+
+You can download the alpha build from the **Releases** section of this repository.
