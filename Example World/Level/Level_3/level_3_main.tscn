@@ -1,0 +1,384 @@
+[gd_scene format=3 uid="uid://b18uorudxp5sj"]
+
+[ext_resource type="Environment" uid="uid://bqp54syxqnqww" path="res://Player_Controller/world_environment.tres" id="1_bcgjq"]
+[ext_resource type="Texture2D" uid="uid://mutuvrmwka7a" path="res://Example World/ExtraFromEavheng/cea9746f-90a6-4574-8e54-b5da1f088e2c.jpg" id="2_f8crq"]
+[ext_resource type="PackedScene" uid="uid://oc13h3au02ro" path="res://Player_Controller/player_character.tscn" id="3_q0wdq"]
+[ext_resource type="Texture2D" uid="uid://cf3wben1qvvun" path="res://Example World/ExtraFromEavheng/lava.png" id="4_oysyo"]
+[ext_resource type="Texture2D" uid="uid://dqgno6bpaq7h6" path="res://Example World/ExtraFromEavheng/fires.png" id="5_psoqo"]
+[ext_resource type="Script" uid="uid://da80cx8d3ufhr" path="res://Example World/Level/Level_3/Enemy.gd" id="6_bvqg7"]
+[ext_resource type="AudioStream" uid="uid://dkxrc185ujsd1" path="res://Example World/ExtraFromEavheng/ChillStart.mp3" id="7_bogc2"]
+[ext_resource type="AudioStream" uid="uid://bbhtrpopa4dag" path="res://Example World/ExtraFromEavheng/Boss effect.mp3" id="8_dbjla"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4r2lv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo61t"]
+albedo_texture = ExtResource("2_f8crq")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bk4di"]
+radius = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82y80"]
+albedo_texture = ExtResource("4_oysyo")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_etv36"]
+material = SubResource("StandardMaterial3D_82y80")
+size = Vector2(18, 200)
+subdivide_depth = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_etv36"]
+size = Vector3(18, 0.1, 200.264)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uptxv"]
+albedo_texture = ExtResource("5_psoqo")
+
+[sub_resource type="SphereMesh" id="SphereMesh_2w12e"]
+radius = 4.0
+height = 8.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q8tgt"]
+albedo_texture = ExtResource("2_f8crq")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_82y80"]
+radius = 6.716
+
+[node name="Level_3" type="Node3D" unique_id=1606759431 groups=["World"]]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1670542895]
+environment = ExtResource("1_bcgjq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=740772079]
+transform = Transform3D(-0.8435731, -0.44660202, -0.2982133, -0.28327402, -0.10170801, 0.9536306, -0.45622405, 0.8889332, -0.040712614, -4.3793087, 6.659208, 6.130226)
+layers = 524289
+light_color = Color(1, 1, 0.780392, 1)
+shadow_enabled = true
+
+[node name="Enemy" type="Node3D" parent="." unique_id=420272905]
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 58.925888, -9.919525, -514.04517)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy" unique_id=1169696287]
+transform = Transform3D(-0.01036708, 0, -0.9999463, 0, 1, 0, 0.9999463, 0, -0.01036708, -176.45059, 3.1994789, -14.705748)
+mesh = SubResource("SphereMesh_4r2lv")
+surface_material_override/0 = SubResource("StandardMaterial3D_bo61t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy" unique_id=2030623320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4705776, 0)
+shape = SubResource("SphereShape3D_bk4di")
+
+[node name="Player_Character" parent="." unique_id=2110896157 instance=ExtResource("3_q0wdq")]
+transform = Transform3D(-0.9975065, 0, -0.07057485, 0, 1, 0, 0.07057485, 0, -0.9975065, 0.48244286, 0.26812816, -2.367126)
+
+[node name="LevelGeometry" type="CSGCombiner3D" parent="." unique_id=292099685]
+use_collision = true
+
+[node name="Floor" type="StaticBody3D" parent="LevelGeometry" unique_id=2018464984]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeometry/Floor" unique_id=1806282071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 96.50089)
+mesh = SubResource("PlaneMesh_etv36")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeometry/Floor" unique_id=291111705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 96.643745)
+shape = SubResource("BoxShape3D_etv36")
+
+[node name="Wall1" type="StaticBody3D" parent="LevelGeometry" unique_id=1197898861]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall1" unique_id=1224504300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57249737, 4.705902, 14.260482)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall2" type="StaticBody3D" parent="LevelGeometry" unique_id=1762353633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.432344)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall2" unique_id=1567554368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.996831, 3.7507648, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall3" type="StaticBody3D" parent="LevelGeometry" unique_id=387020990]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall3" unique_id=1174122101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall4" type="StaticBody3D" parent="LevelGeometry" unique_id=1646143142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.031784, 0, 16.179125)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall4" unique_id=1383322186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall5" type="StaticBody3D" parent="LevelGeometry" unique_id=1307749819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5110359, 0, 21.372505)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall5" unique_id=1213057510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall6" type="StaticBody3D" parent="LevelGeometry" unique_id=142913190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.480551, 0, 24.765371)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall6" unique_id=1643559823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall7" type="StaticBody3D" parent="LevelGeometry" unique_id=874848138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.649375, 0, 28.880928)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall7" unique_id=1899645723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall8" type="StaticBody3D" parent="LevelGeometry" unique_id=447872727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2055569, 0, 33.987194)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall8" unique_id=1380971715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall9" type="StaticBody3D" parent="LevelGeometry" unique_id=748026818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5334511, 0, 37.423775)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall9" unique_id=386815799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall10" type="StaticBody3D" parent="LevelGeometry" unique_id=329093783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6454353, 0, 43.890133)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall10" unique_id=19508147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall11" type="StaticBody3D" parent="LevelGeometry" unique_id=1611733886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 48.412724)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall11" unique_id=1223660781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall12" type="StaticBody3D" parent="LevelGeometry" unique_id=1860105016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.792631, 0, 55.26759)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall12" unique_id=88198151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall13" type="StaticBody3D" parent="LevelGeometry" unique_id=2038294969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 62.457344)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall13" unique_id=693497393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall14" type="StaticBody3D" parent="LevelGeometry" unique_id=1975214043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0461092, 0, 69.34836)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall14" unique_id=1734104057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall15" type="StaticBody3D" parent="LevelGeometry" unique_id=1987280644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 74.6456)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall15" unique_id=1096554279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall16" type="StaticBody3D" parent="LevelGeometry" unique_id=2074099974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.59241, 0, 77.224884)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall16" unique_id=2114879975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall17" type="StaticBody3D" parent="LevelGeometry" unique_id=135690943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 81.267395)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall17" unique_id=1040809188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall18" type="StaticBody3D" parent="LevelGeometry" unique_id=1155656523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3036175, 0, 89.336685)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall18" unique_id=900542320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall19" type="StaticBody3D" parent="LevelGeometry" unique_id=158717119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 93.97777)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall19" unique_id=9253884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall20" type="StaticBody3D" parent="LevelGeometry" unique_id=345262960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 99.433426)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall20" unique_id=1801854775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall21" type="StaticBody3D" parent="LevelGeometry" unique_id=1932478742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.294422, 0, 103.9616)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall21" unique_id=245084295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall22" type="StaticBody3D" parent="LevelGeometry" unique_id=324382903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9701939, 0, 111.25895)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall22" unique_id=1742411526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall23" type="StaticBody3D" parent="LevelGeometry" unique_id=1462722755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2226067, 0, 118.26584)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall23" unique_id=754930225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall24" type="StaticBody3D" parent="LevelGeometry" unique_id=2122845201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4704285, 0, 127.266495)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall24" unique_id=719953738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall25" type="StaticBody3D" parent="LevelGeometry" unique_id=407557951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 133.34457)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall25" unique_id=2139092377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8858204, 4.705902, 3.401825)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall26" type="StaticBody3D" parent="LevelGeometry" unique_id=511296594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7197247, 0, 140.35712)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall26" unique_id=1721175757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall27" type="StaticBody3D" parent="LevelGeometry" unique_id=683899164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.048029, 0, 147.94836)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall27" unique_id=1593057026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall28" type="StaticBody3D" parent="LevelGeometry" unique_id=1352467725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1264248, 0, 159.06076)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall28" unique_id=805571116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall29" type="StaticBody3D" parent="LevelGeometry" unique_id=224836513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5326443, 0, 171.5382)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall29" unique_id=347168316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="Wall30" type="StaticBody3D" parent="LevelGeometry" unique_id=1198221069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.923149, 0, 177.83905)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometry/Wall30" unique_id=833445192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
+use_collision = true
+height = 10.0
+material = SubResource("StandardMaterial3D_uptxv")
+
+[node name="physics_objects" type="Node3D" parent="." unique_id=446416292]
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="." unique_id=1309991308]
+volume_db = -10.0
+
+[node name="Bot" type="CharacterBody3D" parent="." unique_id=165234562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.482, 0.268, 7.955686)
+script = ExtResource("6_bvqg7")
+intro_sound = ExtResource("7_bogc2")
+loop_sound = ExtResource("8_dbjla")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bot" unique_id=362405088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3564782, 2.6585412)
+mesh = SubResource("SphereMesh_2w12e")
+surface_material_override/0 = SubResource("StandardMaterial3D_q8tgt")
+
+[node name="Label3D" type="Label3D" parent="Bot" unique_id=23282554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001172185, 0.97702885, -1.5453453)
+offset = Vector2(0, 1)
+billboard = 1
+text = "Catch me if u can"
+font_size = 72
+
+[node name="Area3D" type="Area3D" parent="Bot" unique_id=41453929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8187666, 0.88766336)
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bot/Area3D" unique_id=1137449626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31267834, 1.460474)
+shape = SubResource("SphereShape3D_82y80")
+
+[connection signal="body_entered" from="Bot/Area3D" to="Bot" method="_on_area_3d_body_entered"]

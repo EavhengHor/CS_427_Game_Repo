@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsfvq2u25ru8g"
+path="res://.godot/imported/yayyyyy.mp3-f84650aa23b25e0bc61d88e3be48aa81.mp3str"
+
+[deps]
+
+source_file="res://Example World/ExtraFromEavhengAudio/yayyyyy.mp3"
+dest_files=["res://.godot/imported/yayyyyy.mp3-f84650aa23b25e0bc61d88e3be48aa81.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

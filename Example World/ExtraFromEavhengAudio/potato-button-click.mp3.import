@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cccc0j1ehfr1q"
+path="res://.godot/imported/potato-button-click.mp3-da4a79f0e3bffcaa08e280a2955e704f.mp3str"
+
+[deps]
+
+source_file="res://Example World/ExtraFromEavhengAudio/potato-button-click.mp3"
+dest_files=["res://.godot/imported/potato-button-click.mp3-da4a79f0e3bffcaa08e280a2955e704f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6fvjpge7qvvs"
+path="res://.godot/imported/background.mp3-b10b2c632dc12fa6722059ce50507f22.mp3str"
+
+[deps]
+
+source_file="res://Example World/ExtraFromEavhengAudio/background.mp3"
+dest_files=["res://.godot/imported/background.mp3-b10b2c632dc12fa6722059ce50507f22.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

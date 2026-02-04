@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://b3ehylernk46p"]
+
+[ext_resource type="Script" uid="uid://db58ho8eoy0ac" path="res://Example World/UI/StartUI.gd" id="1_5hcg7"]
+[ext_resource type="Texture2D" uid="uid://pixagnnn56ld" path="res://Example World/ExtraFromEavheng/Screenshot 2026-01-27 at 11.17.01 in the morning.png" id="1_a7ua3"]
+[ext_resource type="Texture2D" uid="uid://cgawubnups2fp" path="res://Example World/ExtraFromEavheng/ai_front_background.png" id="3_h4dix"]
+[ext_resource type="Texture2D" uid="uid://c24ud4nbt23pg" path="res://Example World/ExtraFromEavheng/start-start.png" id="4_latlk"]
+[ext_resource type="Texture2D" uid="uid://dr2nrxoaklgtf" path="res://Example World/ExtraFromEavheng/start-end.png" id="5_ro4fb"]
+[ext_resource type="Texture2D" uid="uid://cb1gt7xxmkeec" path="res://Example World/ExtraFromEavheng/start-mid.png" id="6_knw8k"]
+[ext_resource type="Texture2D" uid="uid://bubob6x7ciany" path="res://Example World/ExtraFromEavheng/exit-starts.png" id="7_h4dix"]
+[ext_resource type="Texture2D" uid="uid://bec8nfmichc6g" path="res://Example World/ExtraFromEavheng/exit-end.png" id="8_6b22m"]
+[ext_resource type="Texture2D" uid="uid://q4nte6hx253v" path="res://Example World/ExtraFromEavheng/exit-mid.png" id="9_pd4sy"]
+[ext_resource type="AudioStream" uid="uid://cccc0j1ehfr1q" path="res://Example World/ExtraFromEavhengAudio/potato-button-click.mp3" id="10_6b22m"]
+[ext_resource type="AudioStream" uid="uid://bsfvq2u25ru8g" path="res://Example World/ExtraFromEavhengAudio/yayyyyy.mp3" id="11_pd4sy"]
+[ext_resource type="AudioStream" uid="uid://6fvjpge7qvvs" path="res://Example World/ExtraFromEavhengAudio/background.mp3" id="12_krd1q"]
+
+[node name="UI" type="Control" unique_id=656656133]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_right = 201.20764
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7934019, 1.0181402)
+size_flags_horizontal = 4
+
+[node name="Control" type="Control" parent="." unique_id=94173568]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -726.0
+offset_top = -386.0
+offset_right = 726.0
+offset_bottom = 386.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5hcg7")
+
+[node name="PotatoBorder_Background" type="NinePatchRect" parent="Control" unique_id=1729863300]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 293.62225
+offset_top = -531.31384
+offset_right = 993.74963
+offset_bottom = -43.590332
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.30851114
+texture = ExtResource("1_a7ua3")
+
+[node name="PotatoBorder_Background2" type="NinePatchRect" parent="Control" unique_id=1250300515]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.2110004
+anchor_top = 3.9400003
+anchor_right = 7.2110004
+anchor_bottom = 3.9400003
+offset_left = -10905.257
+offset_top = -2766.4395
+offset_right = -10198.207
+offset_bottom = -2220.0498
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.3084265
+texture = ExtResource("1_a7ua3")
+
+[node name="Cardboard_Background" type="TextureRect" parent="Control" unique_id=898057727]
+light_mask = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1973.678
+offset_top = -818.895
+offset_right = 1954.9734
+offset_bottom = 818.895
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_h4dix")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Cardboard_Background" unique_id=2057704625]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -290.0
+offset_right = 240.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start_Button" type="TextureButton" parent="Control/Cardboard_Background/VBoxContainer" unique_id=2145881790]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_latlk")
+texture_pressed = ExtResource("5_ro4fb")
+texture_hover = ExtResource("6_knw8k")
+
+[node name="Exit_Button" type="TextureButton" parent="Control/Cardboard_Background/VBoxContainer" unique_id=660466285]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("7_h4dix")
+texture_pressed = ExtResource("8_6b22m")
+texture_hover = ExtResource("9_pd4sy")
+
+[node name="Exit" type="AudioStreamPlayer" parent="Control" unique_id=881604062]
+stream = ExtResource("10_6b22m")
+
+[node name="Start" type="AudioStreamPlayer" parent="Control" unique_id=626351255]
+stream = ExtResource("11_pd4sy")
+
+[node name="Background" type="AudioStreamPlayer" parent="Control" unique_id=1593705709]
+stream = ExtResource("12_krd1q")
+
+[connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/Start_Button" to="Control" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/Exit_Button" to="Control" method="_on_exit_button_pressed"]
