@@ -6,10 +6,13 @@ extends Control
 # Audio Nodes
 @onready var start_sound = $Start
 @onready var exit_sound = $Exit
-@onready var background_music = $Background  # This matches the node in your screenshot
+@onready var background_music = $Background
+
+# 1. Add this variable to track if a button was already clicked
+var is_transitioning = false
 
 func _ready():
-	# 1. Start playing background music immediately when the game loads
+	# Start playing background music immediately
 	if background_music:
 		background_music.play()
 	else:
@@ -23,31 +26,45 @@ func _ready():
 		exit_button.pressed.connect(_on_exit_button_pressed)
 
 func _on_start_button_pressed():
+	# 2. Check if we are already transitioning. If yes, stop here.
+	if is_transitioning:
+		return
+	
+	# 3. "Lock" the buttons so further clicks are ignored
+	is_transitioning = true
+	
 	print("Start button pressed!")
 	
-	# 1. STOP the background music immediately
+	# STOP the background music immediately
 	background_music.stop()
 	
-	# 2. Play the start sound
+	# Play the start sound
 	start_sound.play()
 	
-	# 3. Wait for start sound to finish
+	# Wait for start sound to finish
 	await start_sound.finished
 	
-	# 4. Change scene
+	# Change scene
 	get_tree().change_scene_to_file("res://Example World/Level/Level_1/level_1_main.tscn")
 
 func _on_exit_button_pressed():
+	# 2. Check if we are already transitioning. If yes, stop here.
+	if is_transitioning:
+		return
+		
+	# 3. "Lock" the buttons
+	is_transitioning = true
+	
 	print("Exit button pressed!")
 	
-	# 1. STOP the background music immediately
+	# STOP the background music immediately
 	background_music.stop()
 	
-	# 2. Play the exit sound
+	# Play the exit sound
 	exit_sound.play()
 	
-	# 3. Wait for exit sound to finish
+	# Wait for exit sound to finish
 	await exit_sound.finished
 	
-	# 4. Quit
+	# Quit
 	get_tree().quit()
