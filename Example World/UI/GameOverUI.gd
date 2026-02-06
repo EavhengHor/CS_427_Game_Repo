@@ -11,34 +11,33 @@ func _ready():
 	
 	# --- CONNECT PLAY AGAIN BUTTON ---
 	if play_again_button:
-		# Safety Check: Only connect if it isn't connected yet!
 		if not play_again_button.pressed.is_connected(_on_play_again_pressed):
 			play_again_button.pressed.connect(_on_play_again_pressed)
 	else:
-		print("❌ ERROR: You forgot to drag the PlayAgain_Button into the Inspector script slot!")
+		print("❌ ERROR: PlayAgain_Button is missing! Drag it into the Inspector.")
 
 	# --- CONNECT EXIT BUTTON ---
 	if exit_button:
-		# Safety Check: Only connect if it isn't connected yet!
 		if not exit_button.pressed.is_connected(_on_exit_pressed):
 			exit_button.pressed.connect(_on_exit_pressed)
 	else:
-		print("❌ ERROR: You forgot to drag the Exit_Button into the Inspector script slot!")
+		print("❌ ERROR: Exit_Button is missing! Drag it into the Inspector.")
 
 func _on_play_again_pressed():
-	print("🖱️ Play Again CLICKED!")
+	print("🖱️ Play Again CLICKED! Loading Level 1...")
+	
 	if is_transitioning:
 		return
-	
 	is_transitioning = true
 	
-	# CHANGE SCENE - Make sure this path is exactly right for your game
+	# --- USE THE EXACT PATH YOU PROVIDED ---
 	get_tree().change_scene_to_file("res://Example World/Level/Level_1/level_1_main.tscn")
 
 func _on_exit_pressed():
 	print("🖱️ Exit CLICKED!")
+	
 	if is_transitioning:
 		return
-		
 	is_transitioning = true
+	
 	get_tree().quit()

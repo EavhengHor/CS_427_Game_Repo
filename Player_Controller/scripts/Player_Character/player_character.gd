@@ -1,9 +1,14 @@
 extends CharacterBody3D
 
 @onready var camera = %Camera
-@onready var raycast = %Camera/RayCast3D 
 
-# --- NEW: Drag your GameOverUI.tscn here in the Inspector! ---
+# --- FIX: We use @export so you can drag-and-drop it in the Inspector! ---
+# 1. Save this script.
+# 2. Click Player_Character in the scene.
+# 3. Drag your 'RayCast3D' node into this new empty slot in the Inspector.
+@export var raycast: RayCast3D
+
+# --- Drag your GameOverUI.tscn here in the Inspector! ---
 @export var game_over_screen: PackedScene 
 
 @export var subviewport_camera: Camera3D
@@ -67,7 +72,7 @@ var jump_available: bool = true
 var jump_buffer: bool = false
 
 var can_move: bool = false
-var is_dead: bool = false # Tracks if we are dead
+var is_dead: bool = false 
 
 func _ready() -> void:
 	update_camera_rotation()
@@ -93,7 +98,7 @@ func update_camera_rotation() -> void:
 	camera_rotation.x = current_rotation.y
 	camera_rotation.y = current_rotation.x
 	
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	# Always allow unlocking the mouse
 	if event.is_action_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -144,8 +149,9 @@ func _input(event: InputEvent) -> void:
 			speed_modifier = walk_speed
 
 func shoot() -> void:
+	# Safety check
 	if not raycast:
-		print("ERROR: RayCast3D not found!")
+		print("ERROR: RayCast3D not found! Please Drag it in the Inspector.")
 		return
 		
 	if raycast.is_colliding():
@@ -322,12 +328,8 @@ func die():
 	
 	if game_over_screen:
 		var screen = game_over_screen.instantiate()
-		
-		# --- CHANGE THIS LINE ---
-		# Old: get_tree().root.add_child(screen)
-		# New: Add it to your existing UI layer (where the crosshair/sprint bar is)
+		# Add it to your existing UI layer (CanvasLayer)
 		$CanvasLayer.add_child(screen) 
-		
 	else:
 		print("ERROR: Game Over UI not assigned!")
 		get_tree().reload_current_scene()

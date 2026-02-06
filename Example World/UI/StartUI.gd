@@ -18,12 +18,8 @@ func _ready():
 	else:
 		print("ERROR: Background music node not found")
 
-	# Connect signals
-	if start_button:
-		start_button.pressed.connect(_on_start_button_pressed)
-	
-	if exit_button:
-		exit_button.pressed.connect(_on_exit_button_pressed)
+	# --- FIXED: REMOVED MANUAL CONNECTIONS ---
+	# The signals are already connected in the Editor, so we don't need code here!
 
 func _on_start_button_pressed():
 	# 2. Check if we are already transitioning. If yes, stop here.
