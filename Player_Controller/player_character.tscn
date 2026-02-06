@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=4 uid="uid://oc13h3au02ro"]
+[gd_scene format=4 uid="uid://oc13h3au02ro"]
 
 [ext_resource type="Script" uid="uid://b1qhxy4fcqu85" path="res://Player_Controller/scripts/Player_Character/player_character.gd" id="1_h0t42"]
 [ext_resource type="Script" uid="uid://bjftagasy1thg" path="res://Player_Controller/scripts/Player_Character/HUD.gd" id="2_tvwwj"]
@@ -1029,7 +1029,7 @@ radius = 0.45
 radius = 0.4
 height = 0.8
 
-[node name="Player_Character" type="CharacterBody3D" node_paths=PackedStringArray("subviewport_camera", "main_camera", "animation_tree", "crouch_collision", "right_lean_collision", "left_lean_collision", "sprint_timer", "coyote_timer")]
+[node name="Player_Character" type="CharacterBody3D" unique_id=617039598 node_paths=PackedStringArray("subviewport_camera", "main_camera", "animation_tree", "crouch_collision", "right_lean_collision", "left_lean_collision", "sprint_timer", "coyote_timer")]
 floor_max_angle = 0.872665
 script = ExtResource("1_h0t42")
 subviewport_camera = NodePath("CanvasLayer/SubViewportContainer/SubViewport/Camera3D")
@@ -1044,11 +1044,11 @@ acceleration = 20.0
 coyote_timer = NodePath("CoyoteTimer")
 metadata/_edit_group_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=226052222]
 unique_name_in_owner = true
 script = ExtResource("2_tvwwj")
 
-[node name="Overlay" type="TextureRect" parent="CanvasLayer"]
+[node name="Overlay" type="TextureRect" parent="CanvasLayer" unique_id=1382115018]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -1059,42 +1059,42 @@ mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="debug_hud" type="VBoxContainer" parent="CanvasLayer"]
+[node name="debug_hud" type="VBoxContainer" parent="CanvasLayer" unique_id=1920875692]
 anchors_preset = 9
 anchor_bottom = 1.0
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/debug_hud"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/debug_hud" unique_id=1255153386]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/debug_hud/HBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/debug_hud/HBoxContainer" unique_id=2121531138]
 layout_mode = 2
 text = "Current Weapon: "
 
-[node name="CurrentWeapon" type="Label" parent="CanvasLayer/debug_hud/HBoxContainer"]
+[node name="CurrentWeapon" type="Label" parent="CanvasLayer/debug_hud/HBoxContainer" unique_id=852971017]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/debug_hud"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/debug_hud" unique_id=1208924423]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/debug_hud/HBoxContainer2"]
+[node name="Label" type="Label" parent="CanvasLayer/debug_hud/HBoxContainer2" unique_id=195839390]
 layout_mode = 2
 text = "Ammo:"
 
-[node name="CurrentAmmo" type="Label" parent="CanvasLayer/debug_hud/HBoxContainer2"]
+[node name="CurrentAmmo" type="Label" parent="CanvasLayer/debug_hud/HBoxContainer2" unique_id=2008097403]
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/debug_hud"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/debug_hud" unique_id=1955872284]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/debug_hud/HBoxContainer3"]
+[node name="Label" type="Label" parent="CanvasLayer/debug_hud/HBoxContainer3" unique_id=92792839]
 layout_mode = 2
 text = "Weapon Stack:"
 
-[node name="WeaponStack" type="Label" parent="CanvasLayer/debug_hud/HBoxContainer3"]
+[node name="WeaponStack" type="Label" parent="CanvasLayer/debug_hud/HBoxContainer3" unique_id=1410781434]
 layout_mode = 2
 
-[node name="MainSight" type="TextureRect" parent="CanvasLayer"]
+[node name="MainSight" type="TextureRect" parent="CanvasLayer" unique_id=1608662126]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1104,7 +1104,7 @@ mouse_filter = 2
 texture = ExtResource("3_7f0mw")
 stretch_mode = 3
 
-[node name="HitSight" type="TextureRect" parent="CanvasLayer"]
+[node name="HitSight" type="TextureRect" parent="CanvasLayer" unique_id=2102299587]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -1115,11 +1115,11 @@ mouse_filter = 2
 texture = ExtResource("4_l32wb")
 stretch_mode = 3
 
-[node name="HitSightTimer" type="Timer" parent="CanvasLayer/HitSight"]
+[node name="HitSightTimer" type="Timer" parent="CanvasLayer/HitSight" unique_id=903225453]
 wait_time = 0.05
 one_shot = true
 
-[node name="SprintBar" type="HSlider" parent="CanvasLayer"]
+[node name="SprintBar" type="HSlider" parent="CanvasLayer" unique_id=1507106551]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -1139,7 +1139,7 @@ value = 100.0
 editable = false
 scrollable = false
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=382103265]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1147,41 +1147,41 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1667868520]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=259515728]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5451, 0)
 cull_mask = 524288
 
-[node name="Camera" type="Node3D" parent="."]
+[node name="Camera" type="Node3D" parent="." unique_id=447142553]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 0)
 
-[node name="LeanPivot" type="Node3D" parent="Camera"]
+[node name="LeanPivot" type="Node3D" parent="Camera" unique_id=705389573]
 
-[node name="MainCamera" type="Camera3D" parent="Camera/LeanPivot"]
+[node name="MainCamera" type="Camera3D" parent="Camera/LeanPivot" unique_id=1607144063]
 unique_name_in_owner = true
 cull_mask = 524287
 current = true
 
-[node name="Weapons_Manager" type="Node3D" parent="Camera/LeanPivot/MainCamera" node_paths=PackedStringArray("animation_player", "melee_hitbox")]
+[node name="Weapons_Manager" type="Node3D" parent="Camera/LeanPivot/MainCamera" unique_id=1775260769 node_paths=PackedStringArray("animation_player", "melee_hitbox")]
 script = ExtResource("5_wuueu")
 animation_player = NodePath("Weapons_Models/AnimationPlayer")
 melee_hitbox = NodePath("Melee_Hitbox")
 weapon_stack = Array[ExtResource("6_wj0qi")]([SubResource("Resource_4pcyg")])
 
-[node name="Weapons_Models" type="Node3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager"]
+[node name="Weapons_Models" type="Node3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager" unique_id=1654781424]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.54919, 0)
 
-[node name="blasterI" type="Node3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager/Weapons_Models"]
+[node name="blasterI" type="Node3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager/Weapons_Models" unique_id=2021294936]
 transform = Transform3D(-1, 0, -2.5351817e-06, 0, 1, 0, 2.5351817e-06, 0, -1, -0.148, 1.379, -0.398)
 visible = false
 
-[node name="blasterD2" type="MeshInstance3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager/Weapons_Models/blasterI"]
+[node name="blasterD2" type="MeshInstance3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager/Weapons_Models/blasterI" unique_id=1844053786]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.15, 0, -0.15)
 layers = 524288
 mesh = ExtResource("8_giihu")
@@ -1195,64 +1195,60 @@ surface_material_override/5 = SubResource("StandardMaterial3D_08kta")
 surface_material_override/6 = SubResource("StandardMaterial3D_ocqwr")
 surface_material_override/7 = SubResource("StandardMaterial3D_apkny")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/LeanPivot/MainCamera/Weapons_Manager/Weapons_Models"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/LeanPivot/MainCamera/Weapons_Manager/Weapons_Models" unique_id=1878367676]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_ys4uk"),
-&"Global": ExtResource("13_lmhsg")
-}
+libraries/ = SubResource("AnimationLibrary_ys4uk")
+libraries/Global = ExtResource("13_lmhsg")
 
-[node name="blasterQ2" type="Node3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager/Weapons_Models"]
+[node name="blasterQ2" type="Node3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager/Weapons_Models" unique_id=434172575]
 transform = Transform3D(-1, 0, 2.5351817e-06, 0, 1, 0, -2.5351817e-06, 0, -1, 0, 0, 0)
 visible = false
 
-[node name="blasterQ" type="MeshInstance3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager/Weapons_Models/blasterQ2"]
+[node name="blasterQ" type="MeshInstance3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager/Weapons_Models/blasterQ2" unique_id=1111763695]
 mesh = SubResource("ArrayMesh_8tvdw")
 skeleton = NodePath("")
 
-[node name="BulletPoint" type="Marker3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager"]
+[node name="BulletPoint" type="Marker3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager" unique_id=980745435]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.266143, -0.288234, -0.779217)
 gizmo_extents = 0.21
 
-[node name="Melee_Hitbox" type="ShapeCast3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager"]
+[node name="Melee_Hitbox" type="ShapeCast3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager" unique_id=1859362419]
 shape = SubResource("BoxShape3D_to3sp")
 target_position = Vector3(0, 0, -0.7)
 collision_mask = 36
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="LeanLeftCollision" type="ShapeCast3D" parent="Camera"]
+[node name="LeanLeftCollision" type="ShapeCast3D" parent="Camera" unique_id=830431442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 shape = SubResource("SphereShape3D_24b8y")
 target_position = Vector3(-0.85, 0, 0)
 collision_mask = 5
 debug_shape_custom_color = Color(0, 0, 1, 1)
 
-[node name="LeanRighCollision" type="ShapeCast3D" parent="Camera"]
+[node name="LeanRighCollision" type="ShapeCast3D" parent="Camera" unique_id=631871250]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 shape = SubResource("SphereShape3D_24b8y")
 target_position = Vector3(0.85, 0, 0)
 collision_mask = 5
 debug_shape_custom_color = Color(0, 0, 1, 1)
 
-[node name="BodyCollision" type="CollisionShape3D" parent="."]
+[node name="BodyCollision" type="CollisionShape3D" parent="." unique_id=1178921901]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 shape = SubResource("CapsuleShape3D_73v4a")
 
-[node name="PickUpDetection" type="Area3D" parent="."]
+[node name="PickUpDetection" type="Area3D" parent="." unique_id=70921254]
 collision_layer = 0
 collision_mask = 8
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpDetection"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpDetection" unique_id=1639246080]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015625, 0.271729, 0.085144)
 shape = SubResource("BoxShape3D_mvomp")
 
-[node name="CharacterAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ity6x")
-}
+[node name="CharacterAnimationPlayer" type="AnimationPlayer" parent="." unique_id=595467100]
+libraries/ = SubResource("AnimationLibrary_ity6x")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1118022410]
 tree_root = SubResource("AnimationNodeBlendTree_5pepu")
 anim_player = NodePath("../CharacterAnimationPlayer")
 parameters/Crouch_Blend/blend_amount = 0.0
@@ -1261,18 +1257,18 @@ parameters/lean_blend/blend_amount = 0.0
 parameters/left_collision_blend/blend_amount = 0.0
 parameters/right_collision_blend/blend_amount = 0.0
 
-[node name="CrouchCollider" type="ShapeCast3D" parent="."]
+[node name="CrouchCollider" type="ShapeCast3D" parent="." unique_id=896261582]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 shape = SubResource("SphereShape3D_cx3sy")
 target_position = Vector3(0, 0.4, 0)
 
-[node name="SprintTimer" type="Timer" parent="."]
+[node name="SprintTimer" type="Timer" parent="." unique_id=1292844643]
 wait_time = 2.0
 one_shot = true
 
-[node name="CoyoteTimer" type="Timer" parent="."]
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=690328837]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1828531767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039411902, 0.18243372, -2.3841858e-07)
 shape = SubResource("CapsuleShape3D_yhrls")
 

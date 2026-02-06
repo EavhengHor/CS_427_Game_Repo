@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://35m1hjexj7eu"
+path="res://.godot/imported/Lettuce.obj-f2da18995e9dd3755e360ca1cf815099.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Lettuce.obj-f2da18995e9dd3755e360ca1cf815099.mesh"]
+
+source_file="res://Example World/AssetForGame/Ultimate Food Pack - Oct 2019/OBJ/Lettuce.obj"
+dest_files=["res://.godot/imported/Lettuce.obj-f2da18995e9dd3755e360ca1cf815099.mesh", "res://.godot/imported/Lettuce.obj-f2da18995e9dd3755e360ca1cf815099.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,10 +1,14 @@
 extends CharacterBody3D
 
 @onready var camera = %Camera
+@onready var raycast = %Camera/RayCast3D 
+
+# --- NEW: Drag your GameOverUI.tscn here in the Inspector! ---
+@export var game_over_screen: PackedScene 
+
 @export var subviewport_camera: Camera3D
 @export var main_camera:Camera3D
 @export var animation_tree: AnimationTree
-
 
 var camera_rotation: Vector2 = Vector2(0.0,0.0)
 var mouse_sensitivity = 0.001
@@ -62,24 +66,49 @@ var _speed: float
 var jump_available: bool = true
 var jump_buffer: bool = false
 
+var can_move: bool = false
+var is_dead: bool = false # Tracks if we are dead
+
 func _ready() -> void:
 	update_camera_rotation()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	calculate_movement_parameters()
+	
+	# RayCast self check
+	if raycast:
+		raycast.add_exception(self)
+	
+	# FREEZE LOGIC
+	print("Player frozen for 8 seconds...")
+	can_move = false
+	await get_tree().create_timer(10.0).timeout
+	
+	# Only unfreeze if we haven't died while waiting!
+	if not is_dead:
+		print("Player Unfrozen!")
+		can_move = true
 	
 func update_camera_rotation() -> void:
 	var current_rotation = get_rotation()
 	camera_rotation.x = current_rotation.y
 	camera_rotation.y = current_rotation.x
 	
-	
 func _input(event: InputEvent) -> void:
+	# Always allow unlocking the mouse
 	if event.is_action_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
+	# IF FROZEN OR DEAD, STOP HERE
+	if not can_move or is_dead:
+		return
+
+	# SHOOTING INPUT
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		shoot()
+
 	if event is InputEventMouseMotion:
 		var MouseEvent = event.relative * mouse_sensitivity
 		camera_look(MouseEvent)
@@ -113,6 +142,21 @@ func _input(event: InputEvent) -> void:
 
 		if Input.is_action_just_pressed("walk") and !crouched:
 			speed_modifier = walk_speed
+
+func shoot() -> void:
+	if not raycast:
+		print("ERROR: RayCast3D not found!")
+		return
+		
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		
+		# Check for "Hit_Successful" (Matches your Burger/Minion script)
+		if collider.has_method("Hit_Successful"):
+			collider.Hit_Successful(1)
+			print("Hit enemy!")
+		else:
+			print("Hit object: ", collider.name)
 
 func calculate_movement_parameters() -> void:
 	jump_gravity = (2*jump_height)/pow(jump_peak_time,2)
@@ -184,7 +228,6 @@ func sprint_replenish(delta) -> void:
 	else:
 		sprint_bar_Value = (sprint_timer.time_left/sprint_time)*100
 	
-	#sprint_bar_Value = ((int(Sprint)*sprint_time_remaining)+(int(!Sprint)*sprint_timer.time_left)/sprint_time)*100
 	sprint_bar.value = sprint_bar_Value
 	
 	if sprint_bar_Value == 100:
@@ -226,8 +269,8 @@ func _physics_process(_delta: float) -> void:
 		if jump_buffer:
 			jump()
 			jump_buffer = false
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept"):
+			
+	if can_move and Input.is_action_just_pressed("ui_accept"):
 		if jump_available:
 			if crouched:
 				crouch()
@@ -238,9 +281,10 @@ func _physics_process(_delta: float) -> void:
 			jump_buffer = true
 			get_tree().create_timer(jump_buffer_time).timeout.connect(on_jump_buffer_timeout)
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("left", "right", "up", "down")
+	var input_dir = Vector2.ZERO
+	if can_move:
+		input_dir = Input.get_vector("left", "right", "up", "down")
+		
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	velocity.x = move_toward(velocity.x, direction.x * _speed, _acceleration*_delta)
 	velocity.z = move_toward(velocity.z, direction.z * _speed, _acceleration*_delta)
@@ -265,3 +309,25 @@ func _on_coyote_timer_timeout() -> void:
 
 func on_jump_buffer_timeout()->void:
 	jump_buffer = false
+
+func die():
+	if is_dead:
+		return
+		
+	print("Player Died!")
+	is_dead = true
+	can_move = false
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	if game_over_screen:
+		var screen = game_over_screen.instantiate()
+		
+		# --- CHANGE THIS LINE ---
+		# Old: get_tree().root.add_child(screen)
+		# New: Add it to your existing UI layer (where the crosshair/sprint bar is)
+		$CanvasLayer.add_child(screen) 
+		
+	else:
+		print("ERROR: Game Over UI not assigned!")
+		get_tree().reload_current_scene()

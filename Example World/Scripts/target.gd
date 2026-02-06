@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@export var Health = 20
+@export var Health = 2
 
 func Hit_Successful(damage, _Direction: Vector3 = Vector3.ZERO, _Position: Vector3 = Vector3.ZERO):
 	Health -= damage
