@@ -17,6 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Godot 4 Fps Controller"
 run/main_scene="uid://b3ehylernk46p"
 config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="uid://crbmmr5dobu4n"
 
 [filesystem]
 

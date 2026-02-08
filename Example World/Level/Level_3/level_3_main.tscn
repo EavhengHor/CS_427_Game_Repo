@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://da80cx8d3ufhr" path="res://Example World/Level/Level_3/Enemy.gd" id="6_bvqg7"]
 [ext_resource type="AudioStream" uid="uid://dkxrc185ujsd1" path="res://Example World/ExtraFromEavheng/ChillStart.mp3" id="7_bogc2"]
 [ext_resource type="AudioStream" uid="uid://bbhtrpopa4dag" path="res://Example World/ExtraFromEavheng/Boss effect.mp3" id="8_dbjla"]
+[ext_resource type="AudioStream" uid="uid://8ckou6jg2u0t" path="res://Example World/ExtraFromEavhengAudio/losingSound.mp3" id="9_4s4wx"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_4r2lv"]
 
@@ -380,5 +381,8 @@ collision_layer = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bot/Area3D" unique_id=1137449626]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31267834, 1.460474)
 shape = SubResource("SphereShape3D_82y80")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Bot" unique_id=1316765464]
+stream = ExtResource("9_4s4wx")
 
 [connection signal="body_entered" from="Bot/Area3D" to="Bot" method="_on_area_3d_body_entered"]
