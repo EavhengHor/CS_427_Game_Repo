@@ -6,12 +6,14 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_eqgi8"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1507016920 groups=["Target"]]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("1_eqgi8")
+Health = 30
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1418003782]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.32660437, 0.016833961)
 mesh = ExtResource("1_430dc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1199221323]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25787058, 0)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.25787058, 0)
 shape = SubResource("SphereShape3D_eqgi8")

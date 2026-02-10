@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://8ckou6jg2u0t" path="res://Example World/ExtraFromEavhengAudio/losingSound.mp3" id="13_u04gx"]
 [ext_resource type="PackedScene" uid="uid://dkrc6n7fnpyy4" path="res://Example World/AssetForPlayer/PotatoBotBoss/potato.glb" id="14_mju56"]
 [ext_resource type="Texture2D" uid="uid://dimvmdt4cnh2a" path="res://Example World/Level/Level_1/asset/ai_generated_background.png" id="14_u04gx"]
+[ext_resource type="PackedScene" uid="uid://bo6viygofawpl" path="res://Example World/Level/Level_1/target.tscn" id="17_iylxq"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_4r2lv"]
 
@@ -625,7 +626,7 @@ loop_sound = ExtResource("6_2w12e")
 losing_sound = ExtResource("13_u04gx")
 
 [node name="Sketchfab_Scene" parent="Bot" unique_id=1336363072 instance=ExtResource("14_mju56")]
-transform = Transform3D(0.026328078, 2.9970329, -0.13076939, -2.9970329, 0.020577397, -0.13179669, -0.13076939, 0.13179672, 2.9942493, 0.02000904, 4.5846214, -0.45499983)
+transform = Transform3D(0.17311764, 3.4955049, 0.038406275, 0.8502003, -0.0048030475, -3.3951635, -3.3907506, 0.17726162, -0.8493459, 2.0198512, 2.051012, 1.6821218)
 
 [node name="Label3D" type="Label3D" parent="Bot" unique_id=1853526766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3722548, 0.97702885, -0.45864072)
@@ -635,7 +636,7 @@ text = "Catch me if u can"
 font_size = 72
 
 [node name="Area3D" type="Area3D" parent="Bot" unique_id=413675065]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8187666, 0.88766336)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05327463, 2.8187666, -0.3237865)
 collision_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bot/Area3D" unique_id=1900309177]
@@ -648,24 +649,77 @@ mesh = SubResource("SphereMesh_a5yjk")
 surface_material_override/0 = SubResource("StandardMaterial3D_3hlnu")
 
 [node name="EnemySpawner1" type="Node3D" parent="." unique_id=427661004 groups=["player"]]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 15.078014)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28.726786)
 
 [node name="CharacterBody3D" parent="EnemySpawner1" unique_id=1507016920 instance=ExtResource("13_1f6gj")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -0.019866627, 0.17441809, 30.330025)
-Health = 10
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51470125, 0.1744181, 30.330025)
 
 [node name="EnemySpawner2" type="Node3D" parent="." unique_id=259296868 groups=["player"]]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 51.480648)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 51.27331)
 
 [node name="CharacterBody3D" parent="EnemySpawner2" unique_id=1416788761 instance=ExtResource("13_1f6gj")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -0.82739276, 0.1744181, 24.212337)
-Health = 10
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7343243, 0.1744181, 24.212337)
 
-[node name="EnemySpawner3" type="Node3D" parent="." unique_id=495192553 groups=["player"]]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 23.524822)
+[node name="EnemySpawner3" type="Node3D" parent="." unique_id=1873419015 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2121668, 0, 74.26135)
 
-[node name="CharacterBody3D" parent="EnemySpawner3" unique_id=2117650157 instance=ExtResource("13_1f6gj")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -0.3366273, 0.17441812, 68.25815)
-Health = 10
+[node name="CharacterBody3D" parent="EnemySpawner3" unique_id=184372282 instance=ExtResource("13_1f6gj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7343243, 0.1744181, 24.212337)
+
+[node name="EnemySpawner4" type="Node3D" parent="." unique_id=412407606 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13825512, 0, 85.41926)
+
+[node name="CharacterBody3D" parent="EnemySpawner4" unique_id=1518469955 instance=ExtResource("13_1f6gj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7343243, 0.1744181, 24.212337)
+
+[node name="EnemySpawner5" type="Node3D" parent="." unique_id=1881342783 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13825512, 0, 62.363007)
+
+[node name="CharacterBody3D" parent="EnemySpawner5" unique_id=1008142639 instance=ExtResource("13_1f6gj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7343243, 0.1744181, 24.212337)
+
+[node name="EnemySpawner6" type="Node3D" parent="." unique_id=509354674 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13825512, 0, 110.70543)
+
+[node name="CharacterBody3D" parent="EnemySpawner6" unique_id=1267597689 instance=ExtResource("13_1f6gj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7343243, 0.1744181, 24.212337)
+
+[node name="EnemySpawner7" type="Node3D" parent="." unique_id=996873247 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4924345, 0, 134.53427)
+
+[node name="CharacterBody3D" parent="EnemySpawner7" unique_id=1113338043 instance=ExtResource("13_1f6gj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7343243, 0.1744181, 24.212337)
+
+[node name="EnemySpawner8" type="Node3D" parent="." unique_id=303314753 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4924345, 0, 134.53427)
+
+[node name="CharacterBody3D" parent="EnemySpawner8" unique_id=1651560058 instance=ExtResource("13_1f6gj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9131954, 0.1744181, 24.212341)
+
+[node name="EnemySpawner9" type="Node3D" parent="." unique_id=2080349941 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1608315, 0, 134.53427)
+
+[node name="CharacterBody3D" parent="EnemySpawner9" unique_id=129337985 instance=ExtResource("13_1f6gj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9131954, 0.1744181, 24.212341)
+
+[node name="EnemySpawner10" type="Node3D" parent="." unique_id=556659682 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.758399, 0, 134.53427)
+
+[node name="CharacterBody3D" parent="EnemySpawner10" unique_id=1541663904 instance=ExtResource("13_1f6gj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9131954, 0.1744181, 24.212341)
+
+[node name="Enemy2" type="Node" parent="." unique_id=1325116797]
+
+[node name="Target" parent="Enemy2" unique_id=666425268 instance=ExtResource("17_iylxq")]
+transform = Transform3D(-0.7032217, 0, 19.987633, 0, 20, 0, -19.987633, 0, -0.7032217, 3.1693032, -1.2097619, 82.094154)
+Health = 40
+
+[node name="Target2" parent="Enemy2" unique_id=189163123 instance=ExtResource("17_iylxq")]
+transform = Transform3D(-0.7032217, 0, 19.987633, 0, 20, 0, -19.987633, 0, -0.7032217, -0.68534064, -1.2097619, 64.04326)
+Health = 40
+
+[node name="Target3" parent="Enemy2" unique_id=1831724872 instance=ExtResource("17_iylxq")]
+transform = Transform3D(-0.7032217, 0, 19.987633, 0, 20, 0, -19.987633, 0, -0.7032217, -1.7864454, -1.2097619, 115.70768)
+Health = 40
 
 [connection signal="body_entered" from="Bot/Area3D" to="Bot" method="_on_area_3d_body_entered"]

@@ -1179,7 +1179,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.54919, 0)
 
 [node name="blasterI" type="Node3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager/Weapons_Models" unique_id=2021294936]
 transform = Transform3D(-1, 0, -2.5351817e-06, 0, 1, 0, 2.5351817e-06, 0, -1, -0.148, 1.379, -0.398)
-visible = false
 
 [node name="blasterD2" type="MeshInstance3D" parent="Camera/LeanPivot/MainCamera/Weapons_Manager/Weapons_Models/blasterI" unique_id=1844053786]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.15, 0, -0.15)
@@ -1242,7 +1241,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpDetection" unique_id=1639246080]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015625, 0.271729, 0.085144)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015625, 0.6595465, 0.085144)
 shape = SubResource("BoxShape3D_mvomp")
 
 [node name="CharacterAnimationPlayer" type="AnimationPlayer" parent="." unique_id=595467100]
@@ -1269,7 +1268,7 @@ one_shot = true
 [node name="CoyoteTimer" type="Timer" parent="." unique_id=690328837]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1828531767]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039411902, 0.18243372, -2.3841858e-07)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.039411902, 0.5358017, -2.3841858e-07)
 shape = SubResource("CapsuleShape3D_yhrls")
 
 [connection signal="timeout" from="CanvasLayer/HitSight/HitSightTimer" to="CanvasLayer" method="_on_hit_sight_timer_timeout"]

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var speed = 4.0
-@export var Health = 3
+@export var Health = 10
 
 # Randomize this range for every burger
 var detection_range = 0.0 
