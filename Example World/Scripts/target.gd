@@ -1,34 +1,42 @@
 extends StaticBody3D
 
 @export var Health: int = 10
-@export var kill_range: float = 1.5 # The distance at which the player dies
-
-var player = null
 
 func _ready():
-	# Finds the player node - ensure your player is in the "player" group!
-	player = get_tree().get_first_node_in_group("player")
+	# We will create a small 'detection zone' automatically so we don't 
+	# have to guess the distance in _process.
+	setup_death_zone()
 
-func _process(_delta):
-	if not player or not is_instance_valid(player):
-		return
-
-	# Calculate distance between this target and the player
-	var dist = global_position.distance_to(player.global_position)
+func setup_death_zone():
+	# This creates an invisible sensor around your solid wall
+	var detection_area = Area3D.new()
+	add_child(detection_area)
 	
-	# If the player touches this static object
-	if dist < kill_range:
-		# Check if player has the die function
-		if player.has_method("die"):
-			player.die()
+	# Copy the collision shape from the wall to the sensor
+	for child in get_children():
+		if child is CollisionShape3D:
+			var sensor_shape = child.duplicate()
+			detection_area.add_child(sensor_shape)
+			# Make the sensor slightly larger than the wall so it triggers on touch
+			sensor_shape.scale *= 1.1 
+	
+	# Connect the sensor to the death logic
+	detection_area.body_entered.connect(_on_player_touched)
 
-# Hit Logic so you can still destroy the target
-func Hit_Successful(damage, _Direction: Vector3 = Vector3.ZERO, _Position: Vector3 = Vector3.ZERO):
+func _on_player_touched(body):
+	# Check if the body is the player
+	if body.is_in_group("player"):
+		if body.has_method("die"):
+			print("Player touched the wall! Triggering death.")
+			body.die()
+
+# Your weapon system calls this when you shoot the wall
+func Hit_Successful(damage: int, _direction: Vector3 = Vector3.ZERO, _position: Vector3 = Vector3.ZERO):
 	Health -= damage
-	print("Static Target Hit! Health: ", Health)
+	print("Wall Hit! Health: ", Health)
 	if Health <= 0:
 		die()
 
 func die():
-	print("Target Destroyed!")
+	print("Wall Destroyed!")
 	queue_free()

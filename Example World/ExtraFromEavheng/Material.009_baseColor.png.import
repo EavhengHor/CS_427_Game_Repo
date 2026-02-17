@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpsnrla28vd7j"
 path.s3tc="res://.godot/imported/Material.009_baseColor.png-2f4de4e2aa2ab8fce1cdf03137ead319.s3tc.ctex"
+path.etc2="res://.godot/imported/Material.009_baseColor.png-2f4de4e2aa2ab8fce1cdf03137ead319.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Example World/ExtraFromEavheng/Material.009_baseColor.png"
-dest_files=["res://.godot/imported/Material.009_baseColor.png-2f4de4e2aa2ab8fce1cdf03137ead319.s3tc.ctex"]
+dest_files=["res://.godot/imported/Material.009_baseColor.png-2f4de4e2aa2ab8fce1cdf03137ead319.s3tc.ctex", "res://.godot/imported/Material.009_baseColor.png-2f4de4e2aa2ab8fce1cdf03137ead319.etc2.ctex"]
 
 [params]
 

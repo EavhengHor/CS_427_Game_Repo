@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://4wqvscgwpwk8"
 path.s3tc="res://.godot/imported/long grasa.png-18eacc8f7612f107fab1b10914125935.s3tc.ctex"
+path.etc2="res://.godot/imported/long grasa.png-18eacc8f7612f107fab1b10914125935.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Example World/ExtraFromEavheng/long grasa.png"
-dest_files=["res://.godot/imported/long grasa.png-18eacc8f7612f107fab1b10914125935.s3tc.ctex"]
+dest_files=["res://.godot/imported/long grasa.png-18eacc8f7612f107fab1b10914125935.s3tc.ctex", "res://.godot/imported/long grasa.png-18eacc8f7612f107fab1b10914125935.etc2.ctex"]
 
 [params]
 

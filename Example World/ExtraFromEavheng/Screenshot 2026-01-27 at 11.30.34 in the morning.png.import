@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bimqdsg6bkreq"
 path.s3tc="res://.godot/imported/Screenshot 2026-01-27 at 11.30.34 in the morning.png-679559bca8e68be03e7dffecfdbacffa.s3tc.ctex"
+path.etc2="res://.godot/imported/Screenshot 2026-01-27 at 11.30.34 in the morning.png-679559bca8e68be03e7dffecfdbacffa.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Example World/ExtraFromEavheng/Screenshot 2026-01-27 at 11.30.34 in the morning.png"
-dest_files=["res://.godot/imported/Screenshot 2026-01-27 at 11.30.34 in the morning.png-679559bca8e68be03e7dffecfdbacffa.s3tc.ctex"]
+dest_files=["res://.godot/imported/Screenshot 2026-01-27 at 11.30.34 in the morning.png-679559bca8e68be03e7dffecfdbacffa.s3tc.ctex", "res://.godot/imported/Screenshot 2026-01-27 at 11.30.34 in the morning.png-679559bca8e68be03e7dffecfdbacffa.etc2.ctex"]
 
 [params]
 

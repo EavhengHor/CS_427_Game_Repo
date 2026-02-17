@@ -1040,7 +1040,10 @@ crouch_collision = NodePath("CrouchCollider")
 right_lean_collision = NodePath("Camera/LeanLeftCollision")
 left_lean_collision = NodePath("Camera/LeanRighCollision")
 sprint_timer = NodePath("SprintTimer")
+sprint_cooldown_time = 2.0
+sprint_time = 4.0
 acceleration = 20.0
+walk_speed = 0.7
 coyote_timer = NodePath("CoyoteTimer")
 metadata/_edit_group_ = true
 
@@ -1235,6 +1238,7 @@ debug_shape_custom_color = Color(0, 0, 1, 1)
 [node name="BodyCollision" type="CollisionShape3D" parent="." unique_id=1178921901]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 shape = SubResource("CapsuleShape3D_73v4a")
+debug_color = Color(0.99215686, 0, 0.25490198, 0.41960785)
 
 [node name="PickUpDetection" type="Area3D" parent="." unique_id=70921254]
 collision_layer = 0

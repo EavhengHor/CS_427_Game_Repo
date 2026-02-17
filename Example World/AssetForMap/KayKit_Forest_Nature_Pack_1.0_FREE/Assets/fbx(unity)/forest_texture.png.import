@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d07275t7qdmdj"
 path.s3tc="res://.godot/imported/forest_texture.png-137928148d6676a713fbc4ff08b46986.s3tc.ctex"
+path.etc2="res://.godot/imported/forest_texture.png-137928148d6676a713fbc4ff08b46986.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Example World/AssetForMap/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/fbx(unity)/forest_texture.png"
-dest_files=["res://.godot/imported/forest_texture.png-137928148d6676a713fbc4ff08b46986.s3tc.ctex"]
+dest_files=["res://.godot/imported/forest_texture.png-137928148d6676a713fbc4ff08b46986.s3tc.ctex", "res://.godot/imported/forest_texture.png-137928148d6676a713fbc4ff08b46986.etc2.ctex"]
 
 [params]
 

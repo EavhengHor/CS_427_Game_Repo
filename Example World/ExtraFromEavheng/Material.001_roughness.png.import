@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://x4po123wfvj4"
 path.s3tc="res://.godot/imported/Material.001_roughness.png-903a7fb958c2af0a8cd4a43d2279c7ef.s3tc.ctex"
+path.etc2="res://.godot/imported/Material.001_roughness.png-903a7fb958c2af0a8cd4a43d2279c7ef.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Example World/ExtraFromEavheng/Material.001_roughness.png"
-dest_files=["res://.godot/imported/Material.001_roughness.png-903a7fb958c2af0a8cd4a43d2279c7ef.s3tc.ctex"]
+dest_files=["res://.godot/imported/Material.001_roughness.png-903a7fb958c2af0a8cd4a43d2279c7ef.s3tc.ctex", "res://.godot/imported/Material.001_roughness.png-903a7fb958c2af0a8cd4a43d2279c7ef.etc2.ctex"]
 
 [params]
 

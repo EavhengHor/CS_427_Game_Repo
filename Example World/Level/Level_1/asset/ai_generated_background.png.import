@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dimvmdt4cnh2a"
 path.s3tc="res://.godot/imported/ai_generated_background.png-7f7748b3993f968ab6fd5660bdedc4ba.s3tc.ctex"
+path.etc2="res://.godot/imported/ai_generated_background.png-7f7748b3993f968ab6fd5660bdedc4ba.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Example World/Level/Level_1/asset/ai_generated_background.png"
-dest_files=["res://.godot/imported/ai_generated_background.png-7f7748b3993f968ab6fd5660bdedc4ba.s3tc.ctex"]
+dest_files=["res://.godot/imported/ai_generated_background.png-7f7748b3993f968ab6fd5660bdedc4ba.s3tc.ctex", "res://.godot/imported/ai_generated_background.png-7f7748b3993f968ab6fd5660bdedc4ba.etc2.ctex"]
 
 [params]
 

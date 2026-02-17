@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://wnnb8q5naatc"
 path.s3tc="res://.godot/imported/Material.001_metallic.png-caa01369d3be484f14e0f880fc7b4375.s3tc.ctex"
+path.etc2="res://.godot/imported/Material.001_metallic.png-caa01369d3be484f14e0f880fc7b4375.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Example World/ExtraFromEavheng/Material.001_metallic.png"
-dest_files=["res://.godot/imported/Material.001_metallic.png-caa01369d3be484f14e0f880fc7b4375.s3tc.ctex"]
+dest_files=["res://.godot/imported/Material.001_metallic.png-caa01369d3be484f14e0f880fc7b4375.s3tc.ctex", "res://.godot/imported/Material.001_metallic.png-caa01369d3be484f14e0f880fc7b4375.etc2.ctex"]
 
 [params]
 

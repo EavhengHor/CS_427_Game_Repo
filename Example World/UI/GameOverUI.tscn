@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b7nmqssa81d55"]
 
 [ext_resource type="Script" uid="uid://c1cb4ci7py8bi" path="res://Example World/UI/GameOverUI.gd" id="1_6176n"]
-[ext_resource type="Texture2D" uid="uid://pixagnnn56ld" path="res://Example World/ExtraFromEavheng/Screenshot 2026-01-27 at 11.17.01 in the morning.png" id="2_h57i7"]
-[ext_resource type="Texture2D" uid="uid://bhj70hci8psei" path="res://Example World/UI/ai_generated_exits.png" id="3_6176n"]
+[ext_resource type="Texture2D" uid="uid://df65fw3qflnv0" path="res://Example World/UI/potatosad-removebg.png" id="2_6176n"]
+[ext_resource type="Texture2D" uid="uid://cmnawrpjgt6dc" path="res://Example World/UI/cambodain_potato.jpg" id="3_h57i7"]
 [ext_resource type="Texture2D" uid="uid://0nadh7ygh83w" path="res://Example World/UI/retry-start.png" id="4_h57i7"]
 [ext_resource type="Texture2D" uid="uid://de2vhbuxbutnw" path="res://Example World/UI/retry-mid.png" id="5_2cfdl"]
 [ext_resource type="Texture2D" uid="uid://iu50o4ab5pvx" path="res://Example World/UI/retry-end.png" id="6_u2ep3"]
@@ -46,7 +46,6 @@ play_again_button = NodePath("Cardboard_Background/VBoxContainer/PlayAgain_Butto
 exit_button = NodePath("Cardboard_Background/VBoxContainer/Exit_Button")
 
 [node name="PotatoBorder_Background" type="NinePatchRect" parent="Control" unique_id=1729863300]
-visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 8
@@ -54,17 +53,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 293.62225
-offset_top = -531.31384
-offset_right = 993.74963
-offset_bottom = -43.590332
+offset_left = -2079.5513
+offset_top = -222.95557
+offset_right = -656.78235
+offset_bottom = 947.7156
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.30851114
-texture = ExtResource("2_h57i7")
+rotation = -0.34005445
+texture = ExtResource("2_6176n")
 
 [node name="PotatoBorder_Background2" type="NinePatchRect" parent="Control" unique_id=1250300515]
-visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
@@ -72,14 +70,14 @@ anchor_left = 7.2110004
 anchor_top = 3.9400003
 anchor_right = 7.2110004
 anchor_bottom = 3.9400003
-offset_left = -10905.257
-offset_top = -2766.4395
-offset_right = -10198.207
-offset_bottom = -2220.0498
+offset_left = -9214.906
+offset_top = -3318.6536
+offset_right = -8047.1143
+offset_bottom = -2500.4585
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.3084265
-texture = ExtResource("2_h57i7")
+rotation = 0.41098598
+texture = ExtResource("2_6176n")
 
 [node name="Cardboard_Background" type="TextureRect" parent="Control" unique_id=898057727]
 light_mask = 2
@@ -95,7 +93,7 @@ offset_right = 1954.9736
 offset_bottom = 808.33655
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_6176n")
+texture = ExtResource("3_h57i7")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Cardboard_Background" unique_id=2057704625]
@@ -139,5 +137,5 @@ stream = ExtResource("11_juggl")
 [node name="Background" type="AudioStreamPlayer" parent="Control" unique_id=1593705709]
 stream = ExtResource("12_vcmci")
 
-[connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/PlayAgain_Button" to="Control" method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/PlayAgain_Button" to="Control" method="_on_play_again_pressed"]
 [connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/Exit_Button" to="Control" method="_on_exit_button_pressed"]

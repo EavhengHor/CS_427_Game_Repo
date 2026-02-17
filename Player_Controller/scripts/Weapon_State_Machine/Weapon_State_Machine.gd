@@ -168,16 +168,20 @@ func calculate_reload() -> void:
 	var Mag_Amount = current_weapon_slot.weapon.magazine
 	
 	if current_weapon_slot.weapon.incremental_reload:
-		Mag_Amount = current_weapon_slot.current_ammo+1
+		Mag_Amount = current_weapon_slot.current_ammo + 1
 		
-	var Reload_Amount = min(Mag_Amount-current_weapon_slot.current_ammo,Mag_Amount,current_weapon_slot.reserve_ammo)
+	# We still calculate how much is needed to fill the clip...
+	var Reload_Amount = Mag_Amount - current_weapon_slot.current_ammo
 
-	current_weapon_slot.current_ammo = current_weapon_slot.current_ammo+Reload_Amount
-	current_weapon_slot.reserve_ammo = current_weapon_slot.reserve_ammo-Reload_Amount
+	# UPDATE: Fill the current ammo to max
+	current_weapon_slot.current_ammo = Mag_Amount
+	
+	# REMOVED: We no longer subtract from reserve_ammo
+	# current_weapon_slot.reserve_ammo = current_weapon_slot.reserve_ammo - Reload_Amount
 	
 	update_ammo.emit([current_weapon_slot.current_ammo, current_weapon_slot.reserve_ammo])
 	shot_count_update()
-
+	
 func melee() -> void:
 	var Current_Anim = animation_player.get_current_animation()
 	

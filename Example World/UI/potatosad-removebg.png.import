@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhj70hci8psei"
-path="res://.godot/imported/ai_generated_exits.png-c0c0104d94e539be40a216049ebe8456.ctex"
+uid="uid://df65fw3qflnv0"
+path="res://.godot/imported/potatosad-removebg.png-d4ef49e0670fe0e3fa119e97dc18f565.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Example World/UI/ai_generated_exits.png"
-dest_files=["res://.godot/imported/ai_generated_exits.png-c0c0104d94e539be40a216049ebe8456.ctex"]
+source_file="res://Example World/UI/potatosad-removebg.png"
+dest_files=["res://.godot/imported/potatosad-removebg.png-d4ef49e0670fe0e3fa119e97dc18f565.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6y6p3ugeuu3v"
 path.s3tc="res://.godot/imported/ChatGPT Image Dec 30, 2025, 10_39_30 AM.png-43a4144097529ec37b3c2e77faac1197.s3tc.ctex"
+path.etc2="res://.godot/imported/ChatGPT Image Dec 30, 2025, 10_39_30 AM.png-43a4144097529ec37b3c2e77faac1197.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Example World/ExtraFromEavheng/ChatGPT Image Dec 30, 2025, 10_39_30 AM.png"
-dest_files=["res://.godot/imported/ChatGPT Image Dec 30, 2025, 10_39_30 AM.png-43a4144097529ec37b3c2e77faac1197.s3tc.ctex"]
+dest_files=["res://.godot/imported/ChatGPT Image Dec 30, 2025, 10_39_30 AM.png-43a4144097529ec37b3c2e77faac1197.s3tc.ctex", "res://.godot/imported/ChatGPT Image Dec 30, 2025, 10_39_30 AM.png-43a4144097529ec37b3c2e77faac1197.etc2.ctex"]
 
 [params]
 

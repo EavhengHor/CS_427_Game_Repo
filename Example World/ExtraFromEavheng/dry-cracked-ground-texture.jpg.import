@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf0guwqaf5abd"
 path.s3tc="res://.godot/imported/dry-cracked-ground-texture.jpg-48c44ec4d5fdd3889062f34fbfc277ab.s3tc.ctex"
+path.etc2="res://.godot/imported/dry-cracked-ground-texture.jpg-48c44ec4d5fdd3889062f34fbfc277ab.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Example World/ExtraFromEavheng/dry-cracked-ground-texture.jpg"
-dest_files=["res://.godot/imported/dry-cracked-ground-texture.jpg-48c44ec4d5fdd3889062f34fbfc277ab.s3tc.ctex"]
+dest_files=["res://.godot/imported/dry-cracked-ground-texture.jpg-48c44ec4d5fdd3889062f34fbfc277ab.s3tc.ctex", "res://.godot/imported/dry-cracked-ground-texture.jpg-48c44ec4d5fdd3889062f34fbfc277ab.etc2.ctex"]
 
 [params]
 

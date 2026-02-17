@@ -24,15 +24,15 @@ func _ready():
 		print("❌ ERROR: Exit_Button is missing! Drag it into the Inspector.")
 
 func _on_play_again_pressed():
-	print("🖱️ Play Again CLICKED! Loading Level 1...")
+	print("🖱️ Play Again CLICKED! Reloading current scene...")
 	
 	if is_transitioning:
 		return
 	is_transitioning = true
 	
-	# --- USE THE EXACT PATH YOU PROVIDED ---
-	get_tree().change_scene_to_file("res://Example World/Level/Level_1/level_1_main.tscn")
-
+	# This automatically reloads the scene that is currently active
+	get_tree().reload_current_scene()
+	
 func _on_exit_pressed():
 	print("🖱️ Exit CLICKED!")
 	

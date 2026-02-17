@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3h6ku7x5k4ej"
 path.s3tc="res://.godot/imported/potato_1.png-cd6768e3aa5ccde1f189d0e2710d171e.s3tc.ctex"
+path.etc2="res://.godot/imported/potato_1.png-cd6768e3aa5ccde1f189d0e2710d171e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Example World/AssetForPlayer/PotatoBotBoss/potato_1.png"
-dest_files=["res://.godot/imported/potato_1.png-cd6768e3aa5ccde1f189d0e2710d171e.s3tc.ctex"]
+dest_files=["res://.godot/imported/potato_1.png-cd6768e3aa5ccde1f189d0e2710d171e.s3tc.ctex", "res://.godot/imported/potato_1.png-cd6768e3aa5ccde1f189d0e2710d171e.etc2.ctex"]
 
 [params]
 
