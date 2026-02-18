@@ -86,7 +86,7 @@ func _ready() -> void:
 	# FREEZE LOGIC
 	print("Player frozen for 8 seconds...")
 	can_move = false
-	await get_tree().create_timer(10.0).timeout
+	await get_tree().create_timer(8.0).timeout
 	
 	# Only unfreeze if we haven't died while waiting!
 	if not is_dead:

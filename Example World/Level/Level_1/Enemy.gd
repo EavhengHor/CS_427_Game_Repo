@@ -107,18 +107,25 @@ func _on_area_3d_body_entered(body):
 	if not can_detect:
 		return
 		
-	if not body is CharacterBody3D:
-		return
+	if body.name == "Player_Character":
+		# 🏆 CATCH STATE
+		label.text = "Caught!\nPress P to enter Final Boss"
+		moving = false
+		can_restart = false # We aren't restarting Level 1
 		
-	if body.name != "Player_Character":
-		return
-		
-	# 🏆 WIN STATE
-	label.text = "You win!\nPress P to play again"
-	moving = false
-	can_restart = true
-	boss_music.stop()
+		# We use a new variable to check if the player can transition
+		can_go_to_boss = true
+		boss_music.stop()
+
+# Add this variable at the top of your script
+var can_go_to_boss := false
 
 func _input(event):
+	# If caught, press P to go to the Boss Level
+	if can_go_to_boss and event.is_action_pressed("play_again"):
+		print("Entering Final Boss Level...")
+		get_tree().change_scene_to_file("res://Example World/Level/final_boss_level/final_boss_level.tscn")
+	
+	# Keep your existing restart logic for when you lose
 	if can_restart and event.is_action_pressed("play_again"):
 		get_tree().reload_current_scene()

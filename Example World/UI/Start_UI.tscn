@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://db58ho8eoy0ac" path="res://Example World/UI/StartUI.gd" id="1_5hcg7"]
 [ext_resource type="Texture2D" uid="uid://c83olccgcccpb" path="res://Example World/UI/happypotato.png" id="2_krd1q"]
+[ext_resource type="Texture2D" uid="uid://snh3h0w0gbve" path="res://Example World/UI/potatonobg.png" id="3_8pif7"]
 [ext_resource type="Texture2D" uid="uid://cmnawrpjgt6dc" path="res://Example World/UI/cambodain_potato.jpg" id="3_wu1qf"]
 [ext_resource type="Texture2D" uid="uid://c24ud4nbt23pg" path="res://Example World/ExtraFromEavheng/start-start.png" id="4_latlk"]
 [ext_resource type="Texture2D" uid="uid://dr2nrxoaklgtf" path="res://Example World/ExtraFromEavheng/start-end.png" id="5_ro4fb"]
@@ -77,6 +78,20 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.3084265
 texture = ExtResource("2_krd1q")
+
+[node name="PotatoBorder_Background3" type="NinePatchRect" parent="Control" unique_id=91210115]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.842012
+offset_top = -537.252
+offset_right = 27.842041
+offset_bottom = -537.252
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8pif7")
 
 [node name="Cardboard_Background" type="TextureRect" parent="Control" unique_id=898057727]
 light_mask = 2

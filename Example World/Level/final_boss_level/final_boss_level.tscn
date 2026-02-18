@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://bklmryrjodipq"]
+
+[ext_resource type="Environment" uid="uid://bqp54syxqnqww" path="res://Player_Controller/world_environment.tres" id="1_13aek"]
+[ext_resource type="Texture2D" uid="uid://cf3wben1qvvun" path="res://Example World/ExtraFromEavheng/lava.png" id="2_r8h3p"]
+[ext_resource type="PackedScene" uid="uid://oc13h3au02ro" path="res://Player_Controller/player_character.tscn" id="2_y0onw"]
+[ext_resource type="Script" uid="uid://dlmd3nkdrfgnf" path="res://Example World/Level/final_boss_level/giant_potato.gd" id="3_r8h3p"]
+[ext_resource type="PackedScene" uid="uid://cbr803ay86e8p" path="res://Example World/Level/Level_1/minion.tscn" id="5_ov2gd"]
+[ext_resource type="PackedScene" uid="uid://dkrc6n7fnpyy4" path="res://Example World/AssetForPlayer/PotatoBotBoss/potato.glb" id="5_r8h3p"]
+[ext_resource type="Script" uid="uid://172no0wa0hoq" path="res://Example World/Level/final_boss_level/world_border.gd" id="8_glfmx"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_y0onw"]
+
+[sub_resource type="Compositor" id="Compositor_r8h3p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnmda"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qnmda"]
+material = SubResource("StandardMaterial3D_qnmda")
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ov2gd"]
+albedo_texture = ExtResource("2_r8h3p")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_13aek"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qnmda"]
+radius = 3.5
+height = 12.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_y0onw"]
+radius = 200.0
+height = 200.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8h3p"]
+cull_mode = 1
+albedo_texture = ExtResource("2_r8h3p")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ov2gd"]
+size = Vector3(100, 40, 1)
+
+[node name="FinalBossLevel" type="Node3D" unique_id=1206148161]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=255323214]
+environment = ExtResource("1_13aek")
+camera_attributes = SubResource("CameraAttributesPractical_y0onw")
+compositor = SubResource("Compositor_r8h3p")
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1385057897]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=476620392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3838753, 0)
+mesh = SubResource("BoxMesh_qnmda")
+surface_material_override/0 = SubResource("StandardMaterial3D_ov2gd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=72652754]
+shape = SubResource("BoxShape3D_13aek")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=117622242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.04126, 8.764631, -10.594856)
+
+[node name="Player_Character" parent="." unique_id=617039598 groups=["World", "player"] instance=ExtResource("2_y0onw")]
+transform = Transform3D(-0.023524504, 0, -0.9997233, 0, 1, 0, 0.9997233, 0, -0.023524504, -26.99701, 0, 0.3866024)
+
+[node name="Giant Potato" type="CharacterBody3D" parent="." unique_id=300762433 groups=["player"]]
+transform = Transform3D(-0.99984217, 0, -0.017766407, 0, 1, 0, 0.017766407, 0, -0.99984217, 29.806873, 0, 0)
+script = ExtResource("3_r8h3p")
+burger_scene = ExtResource("5_ov2gd")
+spawn_interval = 2.5
+
+[node name="Label3D" type="Label3D" parent="Giant Potato" unique_id=1702495662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.49548, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Giant Potato" unique_id=273378656]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Giant Potato" unique_id=671570530]
+transform = Transform3D(1, 0, 0, 0, 0.09725286, 0.9952597, 0, -0.9952597, 0.09725286, 2.608204, 2.502194, 0)
+shape = SubResource("CapsuleShape3D_qnmda")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Giant Potato/CollisionShape3D" unique_id=1950692208]
+
+[node name="Sketchfab_Scene" parent="Giant Potato" unique_id=1336363072 instance=ExtResource("5_r8h3p")]
+transform = Transform3D(0.17311764, 3.4955049, 0.038406275, 0.8502003, -0.0048030475, -3.3951635, -3.3907506, 0.17726162, -0.8493459, 2.02, 2.051, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Giant Potato" unique_id=1147752634]
+
+[node name="Background" type="MeshInstance3D" parent="." unique_id=40295326]
+transform = Transform3D(-0.6638275, 0.04448872, 0.7465613, 0.029892828, 0.9990096, -0.03295238, -0.7472879, 0.00044210255, -0.66450006, -0.279, 82.11691, 10.893768)
+mesh = SubResource("SphereMesh_y0onw")
+surface_material_override/0 = SubResource("StandardMaterial3D_r8h3p")
+
+[node name="WorldBorder" type="StaticBody3D" parent="." unique_id=1555822788]
+script = ExtResource("8_glfmx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldBorder" unique_id=96728377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -49.464294)
+shape = SubResource("BoxShape3D_ov2gd")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="WorldBorder" unique_id=1178689929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 49.794533)
+shape = SubResource("BoxShape3D_ov2gd")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="WorldBorder" unique_id=1287868756]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 49.714058, 0, 0.27295303)
+shape = SubResource("BoxShape3D_ov2gd")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="WorldBorder" unique_id=196106211]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -50.043938, 0, 0.27295303)
+shape = SubResource("BoxShape3D_ov2gd")
