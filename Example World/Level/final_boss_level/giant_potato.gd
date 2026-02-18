@@ -109,13 +109,18 @@ func player_lost():
 	moving = false
 	spawn_timer.stop()
 
+# ... (rest of your boss script remains the same)
+
 func die():
 	print("POTATO DEFEATED!")
 	moving = false
 	spawn_timer.stop()
 	hide()
-	can_restart = true
+	
+	# --- TRANSITION TO WIN SCENE ---
+	# This leads the player to the win screen after the kill
+	get_tree().change_scene_to_file("res://Example World/UI/Youwin.tscn")
 
 func _input(event):
-	if can_restart and event.is_action_pressed("play_again"):
-		get_tree().reload_current_scene()
+	# Removed 'reload_current_scene' from here since we are moving to a new UI scene
+	pass

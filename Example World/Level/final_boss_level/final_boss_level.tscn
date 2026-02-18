@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dlmd3nkdrfgnf" path="res://Example World/Level/final_boss_level/giant_potato.gd" id="3_r8h3p"]
 [ext_resource type="PackedScene" uid="uid://cbr803ay86e8p" path="res://Example World/Level/Level_1/minion.tscn" id="5_ov2gd"]
 [ext_resource type="PackedScene" uid="uid://dkrc6n7fnpyy4" path="res://Example World/AssetForPlayer/PotatoBotBoss/potato.glb" id="5_r8h3p"]
+[ext_resource type="AudioStream" uid="uid://blkbfqq2kcci5" path="res://Example World/ExtraFromEavhengAudio/boss_sound.mp3" id="8_c83i1"]
 [ext_resource type="Script" uid="uid://172no0wa0hoq" path="res://Example World/Level/final_boss_level/world_border.gd" id="8_glfmx"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_y0onw"]
@@ -107,3 +108,7 @@ shape = SubResource("BoxShape3D_ov2gd")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="WorldBorder" unique_id=196106211]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -50.043938, 0, 0.27295303)
 shape = SubResource("BoxShape3D_ov2gd")
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="." unique_id=1058707504]
+stream = ExtResource("8_c83i1")
+autoplay = true

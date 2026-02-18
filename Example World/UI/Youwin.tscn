@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://doow3gyfe4xu5"]
+
+[ext_resource type="Script" uid="uid://dwdivi5o0si7s" path="res://Example World/UI/youwin.gd" id="1_t5i4w"]
+[ext_resource type="Texture2D" uid="uid://df65fw3qflnv0" path="res://Example World/UI/potatosad-removebg.png" id="2_3myxc"]
+[ext_resource type="Texture2D" uid="uid://cmnawrpjgt6dc" path="res://Example World/UI/cambodain_potato.jpg" id="3_f45lc"]
+[ext_resource type="Texture2D" uid="uid://0nadh7ygh83w" path="res://Example World/UI/retry-start.png" id="4_yjhf4"]
+[ext_resource type="Texture2D" uid="uid://de2vhbuxbutnw" path="res://Example World/UI/retry-mid.png" id="5_kscmu"]
+[ext_resource type="Texture2D" uid="uid://iu50o4ab5pvx" path="res://Example World/UI/retry-end.png" id="6_homcs"]
+[ext_resource type="Texture2D" uid="uid://bubob6x7ciany" path="res://Example World/ExtraFromEavheng/exit-starts.png" id="7_d8ssj"]
+[ext_resource type="Texture2D" uid="uid://bec8nfmichc6g" path="res://Example World/ExtraFromEavheng/exit-end.png" id="8_221ga"]
+[ext_resource type="Texture2D" uid="uid://q4nte6hx253v" path="res://Example World/ExtraFromEavheng/exit-mid.png" id="9_glsji"]
+[ext_resource type="AudioStream" uid="uid://cccc0j1ehfr1q" path="res://Example World/ExtraFromEavhengAudio/potato-button-click.mp3" id="10_67wkt"]
+[ext_resource type="AudioStream" uid="uid://bsfvq2u25ru8g" path="res://Example World/ExtraFromEavhengAudio/yayyyyy.mp3" id="11_3ido1"]
+[ext_resource type="AudioStream" uid="uid://6fvjpge7qvvs" path="res://Example World/ExtraFromEavhengAudio/background.mp3" id="12_cerne"]
+
+[sub_resource type="FontFile" id="FontFile_t5i4w"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/300/0/ascent = 0.0
+cache/0/300/0/descent = 0.0
+cache/0/300/0/underline_position = 0.0
+cache/0/300/0/underline_thickness = 0.0
+cache/0/300/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_3myxc"]
+line_spacing = 10.0
+font = SubResource("FontFile_t5i4w")
+font_size = 300
+font_color = Color(1, 1, 0.25882354, 1)
+
+[node name="UI" type="Control" unique_id=656656133]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_right = 201.20764
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7934019, 1.0181402)
+size_flags_horizontal = 4
+
+[node name="Control" type="Control" parent="." unique_id=94173568 node_paths=PackedStringArray("play_again_button", "exit_button")]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -726.0
+offset_top = -386.0
+offset_right = 726.0
+offset_bottom = 386.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t5i4w")
+play_again_button = NodePath("Cardboard_Background/VBoxContainer/PlayAgain_Button")
+exit_button = NodePath("Cardboard_Background/VBoxContainer/Exit_Button")
+
+[node name="PotatoBorder_Background" type="NinePatchRect" parent="Control" unique_id=1729863300]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2079.5513
+offset_top = -222.95557
+offset_right = -656.78235
+offset_bottom = 947.7156
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.34005445
+texture = ExtResource("2_3myxc")
+
+[node name="PotatoBorder_Background2" type="NinePatchRect" parent="Control" unique_id=1250300515]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.2110004
+anchor_top = 3.9400003
+anchor_right = 7.2110004
+anchor_bottom = 3.9400003
+offset_left = -9214.906
+offset_top = -3318.6536
+offset_right = -8047.1143
+offset_bottom = -2500.4585
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.41098598
+texture = ExtResource("2_3myxc")
+
+[node name="Cardboard_Background" type="TextureRect" parent="Control" unique_id=898057727]
+light_mask = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1964.3257
+offset_top = -818.895
+offset_right = 1954.9736
+offset_bottom = 808.33655
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_f45lc")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Cardboard_Background" unique_id=2057704625]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -290.0
+offset_right = 240.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayAgain_Button" type="TextureButton" parent="Control/Cardboard_Background/VBoxContainer" unique_id=2145881790]
+custom_minimum_size = Vector2(500, 260)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_yjhf4")
+texture_pressed = ExtResource("5_kscmu")
+texture_hover = ExtResource("6_homcs")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Exit_Button" type="TextureButton" parent="Control/Cardboard_Background/VBoxContainer" unique_id=660466285]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("7_d8ssj")
+texture_pressed = ExtResource("8_221ga")
+texture_hover = ExtResource("9_glsji")
+
+[node name="Exit" type="AudioStreamPlayer" parent="Control" unique_id=881604062]
+stream = ExtResource("10_67wkt")
+
+[node name="Start" type="AudioStreamPlayer" parent="Control" unique_id=626351255]
+stream = ExtResource("11_3ido1")
+
+[node name="Background" type="AudioStreamPlayer" parent="Control" unique_id=1593705709]
+stream = ExtResource("12_cerne")
+
+[node name="Label" type="Label" parent="Control" unique_id=1019679627]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -594.80554
+offset_top = -178.75523
+offset_right = 594.19446
+offset_bottom = 431.24475
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 0.14901961, 1)
+theme_override_font_sizes/font_size = 120
+text = "You Win!
+"
+label_settings = SubResource("LabelSettings_3myxc")
+
+[connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/PlayAgain_Button" to="Control" method="_on_play_again_pressed"]
+[connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/Exit_Button" to="Control" method="_on_exit_button_pressed"]
