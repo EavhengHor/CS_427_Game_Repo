@@ -7,6 +7,22 @@ extends CanvasLayer
 @onready var hit_sight_timer = $HitSight/HitSightTimer
 @onready var overLay = $Overlay
 
+# --- NEW: Reference to the Dialog Label ---
+@onready var dialog_label = $DialogLabel 
+
+# --- NEW: The Typewriter Function ---
+func play_intro_dialog():
+	if dialog_label:
+		dialog_label.text = "Are you ready to defeat Evil Potato?"
+		dialog_label.visible_characters = 0
+		dialog_label.show()
+		
+		# Type out over 6 seconds, then immediately hide
+		var tween = get_tree().create_tween()
+		tween.tween_property(dialog_label, "visible_characters", dialog_label.text.length(), 5.0)
+		tween.tween_callback(dialog_label.hide)
+
+# ... (Keep all your other existing functions below here) ...
 func _on_weapons_manager_update_weapon_stack(WeaponStack):
 	current_weapon_stack.text = ""
 	for i in WeaponStack:

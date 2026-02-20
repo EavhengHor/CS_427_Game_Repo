@@ -78,14 +78,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("blasterQ2:position")
+tracks/1/path = NodePath("blasterQ2:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0, 3.14159, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -96,20 +96,20 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("blasterQ2:rotation")
+tracks/3/path = NodePath("blasterQ2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 3.14159, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1051,8 +1051,24 @@ metadata/_edit_group_ = true
 unique_name_in_owner = true
 script = ExtResource("2_tvwwj")
 
+[node name="DialogLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=35946941]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 326.0
+offset_right = -2.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/default_color = Color(0, 0.22352941, 0.972549, 1)
+theme_override_font_sizes/normal_font_size = 128
+text = "Are you ready to defeat the Evil Potato?"
+horizontal_alignment = 1
+
 [node name="Overlay" type="TextureRect" parent="CanvasLayer" unique_id=1382115018]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

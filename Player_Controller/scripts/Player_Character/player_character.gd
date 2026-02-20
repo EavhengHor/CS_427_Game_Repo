@@ -14,6 +14,7 @@ extends CharacterBody3D
 @export var subviewport_camera: Camera3D
 @export var main_camera:Camera3D
 @export var animation_tree: AnimationTree
+@export var dialog_label: Label
 
 var camera_rotation: Vector2 = Vector2(0.0,0.0)
 var mouse_sensitivity = 0.001
@@ -79,20 +80,24 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	calculate_movement_parameters()
 	
-	# RayCast self check
 	if raycast:
 		raycast.add_exception(self)
 	
-	# FREEZE LOGIC
-	print("Player frozen for 8 seconds...")
+	# 1. Trigger the UI Animation in the CanvasLayer
+	if has_node("CanvasLayer"):
+		$CanvasLayer.play_intro_dialog()
+	
+	# 2. Handle the Player Freeze Logic
 	can_move = false
+	print("Player frozen for 8 seconds...")
+	
+	# Wait exactly 8 seconds before allowing movement
 	await get_tree().create_timer(8.0).timeout
 	
-	# Only unfreeze if we haven't died while waiting!
 	if not is_dead:
 		print("Player Unfrozen!")
 		can_move = true
-	
+		
 func update_camera_rotation() -> void:
 	var current_rotation = get_rotation()
 	camera_rotation.x = current_rotation.y
