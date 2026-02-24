@@ -24,7 +24,7 @@ func _on_play_again_pressed():
 	
 	print("Restarting Game: Loading Level 1...")
 	# Change this path to your actual Level 1 scene path
-	get_tree().change_scene_to_file("res://Example World/Level/level_1_main.tscn")
+	get_tree().change_scene_to_file("res://Example World/Level/Level_1/level_1_main.tscn")
 	
 func _on_exit_pressed():
 	if is_transitioning: return

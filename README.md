@@ -1,63 +1,69 @@
-🎮 Catch the Potato
-Author: Eavheng Hor
+# 🎮 Catch the Potato
+**Developed by:** Eavheng Hor  
+**Version:** Alpha v0.1.0 (2026)
 
-A fun and fast-paced arcade game built in Godot where you catch potatoes to score points and face off against a giant mechanical boss! Test your reflexes in Level 1 and survive the chaotic minion-spawning madness of the Final Boss Level.
+A fun and fast-paced arcade game built in **Godot**. Test your reflexes by catching potatoes to score points in Level 1, then prepare for chaos as you face off against a giant mechanical boss in the final stage!
 
-▶️ Gameplay Video
-Watch the gameplay in action:
-👉 Catch the Potato Gameplay
+---
 
-🚀 Alpha Release
-Current Version: Alpha v0.1.0
+## ▶️ Media & Gameplay
+Experience the potato-catching madness in action:
+* **Watch:** [Catch the Potato Gameplay Video](https://your-video-link-here.com) 
 
-Alpha Features
-Level 1 Mechanics: Catch the falling potatoes to score points before time runs out.
+---
 
-Final Boss Fight: Confront the "Giant Potato" bot in a high-stakes battle.
+## 🚀 Alpha Features
 
-Dynamic Spawning: The boss spawns burger minions and walls at a height of Y=2.0 to challenge the player.
+### **Level 1: The Harvest**
+* **Core Mechanics:** Catch falling potatoes to rack up points before the timer hits zero.
+* **Responsive FPS Controls:** Includes modern movement features like sprinting, crouching, and leaning for a fluid experience.
 
-Patrol Systems: Advanced waypoint logic that moves the boss in a precise cross-shaped pattern (Left, Center, Backward, Center).
+### **Final Boss: The Giant Potato**
+* **Epic Confrontation:** Face the "Giant Potato" bot in a high-stakes arena.
+* **Dynamic Spawning:** The boss deploys burger minions and obstacles at height $Y=2.0$ to disrupt your movement.
+* **Advanced Patrol System:** Features custom waypoint logic where the boss moves in a precise cross-shaped pattern (*Left → Center → Backward → Center*).
 
-Responsive FPS Controls: Fully featured first-person movement including sprinting, crouching, and leaning.
+---
 
-🤖 AI Usage
-Artificial Intelligence (Gemini) was utilized during the development of this project to assist with:
+## 🤖 AI Development Assistance
+This project utilized **Gemini (AI)** to streamline development and solve technical hurdles:
 
-GDScript Development: Writing and optimizing the waypoint navigation and spawning logic for the Giant Potato boss.
+* **GDScript Development:** Assisted in writing and optimizing waypoint navigation and spawning logic for the boss fight.
+* **Physics Debugging:** Troubleshooting 3D physics issues, including the "spinning potato" glitch and collision layer conflicts.
+* **System Architecture:** Designing the state management transitions between the arcade level and the boss level.
 
-Physics Debugging: Troubleshooting and fixing 3D physics issues, such as the "spinning potato" glitch and collision layers.
+---
 
-System Architecture: Designing the state management for transitioning between Level 1 and the Final Boss level.
+## 📜 Credits & Asset Links
+Special thanks to the creators whose assets helped bring this game to life:
 
-📜 Credits & Assets
-Special thanks to the creators of the following assets:
+### **Audio**
+* **Main Music:** [Pixel Spy vs Spy](https://opengameart.org/content/pixel-spy-vs-spy) by OpenGameArt
+* **Boss SFX:** [Final Boss Sound](https://pixabay.com/users/freesound_community-46691455/) via Pixabay
 
-Audio
-SFX & Music: Pixel Spy vs Spy by OpenGameArt
+### **3D Models & Environment**
+* **Environment:** [KayKit Forest & Mountains Pack](https://kaylousberg.itch.io/kaykit-forest) by Kay Lousberg
+* **Minions:** [Ultimate Food Pack](https://quaternius.com/packs/ultimatefood.html) by Quaternius
+* **Boss Model:** [Potato Bot](https://sketchfab.com/3d-models/potato-f560410fe07345c3923c69afd22355c1) via Sketchfab
 
-3D Models & Environment
-Forest & Mountains: KayKit Forest Pack by Kay Lousberg
+### **2D Assets & Backgrounds**
+* **Background Art:** [Ministry of Information - Cambodia](https://www.information.gov.kh/articles/1729)
+* **UI/Sprites:** * [Sad Potato Image](https://www.dreamstime.com/sad-raw-potatoes-googly-eyes-white-background-food-funny-face-image176914812) (Dreamstime)
+	* [Happy Potato Image](https://pngtree.com/freepng/a-happy-smiling-potato-with-cartoon-eyes-and-friendly-expression-isolated-on-transparent-background_21733095.html) (Pngtree)
 
-Potato Minions: Ultimate Food Pack by Quaternius
+---
 
-Giant Potato Boss: Potato Bot via Sketchfab
+## 🛠️ Known Limitations
+* **Physics Balancing:** Player-minion interactions are currently being fine-tuned for better "feel."
+* **Performance:** You may experience frame rate fluctuations during high-density minion spawning.
+* **UI/UX:** Game Over and Victory screens are early-stage placeholders.
 
-2D Assets & Backgrounds
-Background Art: Ministry of Information - Cambodia
+---
 
-Sad Potato Image: Dreamstime
+## 📥 Installation
+1. Navigate to the **Releases** section of this repository.
+2. Download the latest alpha zip file.
+3. Unzip the folder and run `CatchThePotato.exe` (Windows) or the equivalent executable for your OS.
 
-Happy Potato Image: Pngtree
-
-🛠️ Known Limitations
-Physics Balancing: Physics-based interactions between minions and the player are still being fine-tuned.
-
-Performance: Frame rates may fluctuate during high-density spawning intervals.
-
-UI Integration: Game Over and Victory screens are in an early alpha state.
-
-📥 Installation
-Download the latest alpha build from the Releases section of this repository. Unzip the file and run CatchThePotato.exe (or the equivalent for your OS).
-
-Copyright © 2026 Eavheng Hor
+---
+**Copyright © 2026 Eavheng Hor**

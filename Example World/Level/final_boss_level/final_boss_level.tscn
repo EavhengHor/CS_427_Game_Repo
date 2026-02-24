@@ -26,8 +26,8 @@ albedo_texture = ExtResource("2_r8h3p")
 size = Vector3(100, 1, 100)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qnmda"]
-radius = 3.5
-height = 12.0
+radius = 3.8
+height = 13.612
 
 [sub_resource type="SphereMesh" id="SphereMesh_y0onw"]
 radius = 200.0
@@ -64,7 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.04126, 8.764631, -10.59485
 transform = Transform3D(-0.023524504, 0, -0.9997233, 0, 1, 0, 0.9997233, 0, -0.023524504, -26.99701, 0, 0.3866024)
 
 [node name="Giant Potato" type="CharacterBody3D" parent="." unique_id=300762433 groups=["player"]]
-transform = Transform3D(-0.99984217, 0, -0.017766407, 0, 1, 0, 0.017766407, 0, -0.99984217, 29.806873, 0, 0)
+transform = Transform3D(-0.99984217, 0, -0.017766407, 0, 1, 0, 0.017766407, 0, -0.99984217, 29.806873, 0, 0.7293787)
 script = ExtResource("3_r8h3p")
 burger_scene = ExtResource("5_ov2gd")
 spawn_interval = 2.5
@@ -75,7 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.49548, 0, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Giant Potato" unique_id=273378656]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Giant Potato" unique_id=671570530]
-transform = Transform3D(1, 0, 0, 0, 0.09725286, 0.9952597, 0, -0.9952597, 0.09725286, 2.608204, 2.502194, 0)
+transform = Transform3D(1, 0, -5.820766e-10, 0, 0.09725286, 0.9952597, 0, -0.99526, 0.09725286, 2.8326435, 2.502194, -1.9301775)
 shape = SubResource("CapsuleShape3D_qnmda")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Giant Potato/CollisionShape3D" unique_id=1950692208]
