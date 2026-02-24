@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dniyrkkdwf3cb"]
 
-[ext_resource type="Texture2D" uid="uid://mutuvrmwka7a" path="res://Example World/ExtraFromEavheng/cea9746f-90a6-4574-8e54-b5da1f088e2c.jpg" id="2_bc588"]
 [ext_resource type="Texture2D" uid="uid://dqgno6bpaq7h6" path="res://Example World/ExtraFromEavheng/fires.png" id="4_2w12e"]
 [ext_resource type="PackedScene" uid="uid://b7nmqssa81d55" path="res://Example World/UI/GameOverUI.tscn" id="4_3hlnu"]
 [ext_resource type="Texture2D" uid="uid://pei31bx87dwx" path="res://Example World/ExtraFromEavheng/grass.jpg" id="4_q8tgt"]
@@ -20,8 +19,11 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_4r2lv"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mju56"]
+load_path = "res://.godot/imported/cea9746f-90a6-4574-8e54-b5da1f088e2c.jpg-43571f51401989167b17517f377d6e73.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo61t"]
-albedo_texture = ExtResource("2_bc588")
+albedo_texture = SubResource("CompressedTexture2D_mju56")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bk4di"]
 radius = 1.2
