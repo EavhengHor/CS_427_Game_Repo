@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4e8n82ckb8ji"
+path="res://.godot/imported/level1_sound.mp3-c4d2ae334bcd0a0fbb3cdd3b0ec900bd.mp3str"
+
+[deps]
+
+source_file="res://Example World/ExtraFromEavhengAudio/level1_sound.mp3"
+dest_files=["res://.godot/imported/level1_sound.mp3-c4d2ae334bcd0a0fbb3cdd3b0ec900bd.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
