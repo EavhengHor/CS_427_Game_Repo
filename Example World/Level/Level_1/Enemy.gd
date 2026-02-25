@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var loop_sound: AudioStream
 @export var losing_sound: AudioStream  # <--- NEW: Drag losingSound.mp3 here in Inspector
 
-var start_pos := Vector3(0.482, 0.268, 2.638)
+var start_pos := Vector3(0.482, 0.268, 20.638)
 var target_pos := Vector3(0.482, 0.268, 191.0)
 
 var moving := false
@@ -38,7 +38,7 @@ func _ready():
 			boss_music.finished.connect(_on_intro_finished)
 	
 	# ⏳ Wait 6 seconds (hidden)
-	await get_tree().create_timer(6.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	
 	# 👀 Show potato
 	show()

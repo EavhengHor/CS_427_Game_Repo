@@ -103,8 +103,8 @@ func _ready() -> void:
 			$CanvasLayer.play_intro_dialog()
 		
 		can_move = false
-		print("Level 1: Player frozen for 3 seconds...")
-		await get_tree().create_timer(3.0).timeout
+		print("Level 1: Player frozen for 10 seconds...")
+		await get_tree().create_timer(10.0).timeout
 		
 		if not is_dead:
 			print("Level 1: Player Unfrozen!")
