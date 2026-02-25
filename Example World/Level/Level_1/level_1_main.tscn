@@ -707,7 +707,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3252463, 0.02587986, 17.775
 [node name="Enemy2" type="Node" parent="." unique_id=1325116797]
 
 [node name="Target" parent="Enemy2" unique_id=666425268 instance=ExtResource("17_iylxq")]
-transform = Transform3D(-0.7032217, 0, 19.987633, 0, 20, 0, -19.987633, 0, -0.7032217, 5.362258, -1.7821164, 82.094154)
+transform = Transform3D(-0.7032217, 0, 19.987633, 0, 20, 0, -19.987633, 0, -0.7032217, 5.362258, -1.7821164, 151.63614)
 Health = 40
 
 [node name="Target2" parent="Enemy2" unique_id=189163123 instance=ExtResource("17_iylxq")]
@@ -715,7 +715,7 @@ transform = Transform3D(-0.5274163, 0, 14.990725, 0, 15, 0, -14.990725, 0, -0.52
 Health = 40
 
 [node name="Target3" parent="Enemy2" unique_id=1831724872 instance=ExtResource("17_iylxq")]
-transform = Transform3D(-0.7032217, 0, 19.987633, 0, 20, 0, -19.987633, 0, -0.7032217, -3.5043314, -2.0198193, 94.34869)
+transform = Transform3D(-0.7032217, 0, 19.987633, 0, 20, 0, -19.987633, 0, -0.7032217, -3.5043314, -2.0198193, 173.24915)
 Health = 40
 
 [node name="Target4" parent="Enemy2" unique_id=478144856 instance=ExtResource("17_iylxq")]

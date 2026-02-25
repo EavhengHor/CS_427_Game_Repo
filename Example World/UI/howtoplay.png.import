@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba328x3ryboc6"
-path="res://.godot/imported/cambodain_potato.jpg-c79b443b3b303af3bdcaec3b725f708a.ctex"
+uid="uid://c1tpcq30eyagj"
+path="res://.godot/imported/howtoplay.png-13fe833c69009a059acb9805ae740f9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Example World/UI/cambodain_potato.jpg"
-dest_files=["res://.godot/imported/cambodain_potato.jpg-c79b443b3b303af3bdcaec3b725f708a.ctex"]
+source_file="res://Example World/UI/howtoplay.png"
+dest_files=["res://.godot/imported/howtoplay.png-13fe833c69009a059acb9805ae740f9f.ctex"]
 
 [params]
 

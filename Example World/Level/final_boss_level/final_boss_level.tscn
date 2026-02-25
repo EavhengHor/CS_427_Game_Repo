@@ -67,7 +67,7 @@ transform = Transform3D(-0.023524504, 0, -0.9997233, 0, 1, 0, 0.9997233, 0, -0.0
 transform = Transform3D(-0.99984217, 0, -0.017766407, 0, 1, 0, 0.017766407, 0, -0.99984217, 29.806873, 0, 0.7293787)
 script = ExtResource("3_r8h3p")
 burger_scene = ExtResource("5_ov2gd")
-spawn_interval = 2.5
+spawn_interval = 1.5
 
 [node name="Label3D" type="Label3D" parent="Giant Potato" unique_id=1702495662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.49548, 0, 0)

@@ -2,16 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dwdivi5o0si7s" path="res://Example World/UI/youwin.gd" id="1_t5i4w"]
 [ext_resource type="Texture2D" uid="uid://df65fw3qflnv0" path="res://Example World/UI/potatosad-removebg.png" id="2_3myxc"]
-[ext_resource type="Texture2D" uid="uid://cmnawrpjgt6dc" path="res://Example World/UI/cambodain_potato.jpg" id="3_f45lc"]
+[ext_resource type="Texture2D" uid="uid://ba328x3ryboc6" path="res://Example World/UI/cambodain_potato.jpg" id="3_f45lc"]
 [ext_resource type="Texture2D" uid="uid://0nadh7ygh83w" path="res://Example World/UI/retry-start.png" id="4_yjhf4"]
 [ext_resource type="Texture2D" uid="uid://de2vhbuxbutnw" path="res://Example World/UI/retry-mid.png" id="5_kscmu"]
 [ext_resource type="Texture2D" uid="uid://iu50o4ab5pvx" path="res://Example World/UI/retry-end.png" id="6_homcs"]
 [ext_resource type="Texture2D" uid="uid://bubob6x7ciany" path="res://Example World/ExtraFromEavheng/exit-starts.png" id="7_d8ssj"]
 [ext_resource type="Texture2D" uid="uid://bec8nfmichc6g" path="res://Example World/ExtraFromEavheng/exit-end.png" id="8_221ga"]
 [ext_resource type="Texture2D" uid="uid://q4nte6hx253v" path="res://Example World/ExtraFromEavheng/exit-mid.png" id="9_glsji"]
-[ext_resource type="AudioStream" uid="uid://cccc0j1ehfr1q" path="res://Example World/ExtraFromEavhengAudio/potato-button-click.mp3" id="10_67wkt"]
 [ext_resource type="AudioStream" uid="uid://bsfvq2u25ru8g" path="res://Example World/ExtraFromEavhengAudio/yayyyyy.mp3" id="11_3ido1"]
-[ext_resource type="AudioStream" uid="uid://6fvjpge7qvvs" path="res://Example World/ExtraFromEavhengAudio/background.mp3" id="12_cerne"]
 
 [sub_resource type="FontFile" id="FontFile_t5i4w"]
 cache/0/variation_coordinates = {}
@@ -160,15 +158,6 @@ texture_normal = ExtResource("7_d8ssj")
 texture_pressed = ExtResource("8_221ga")
 texture_hover = ExtResource("9_glsji")
 
-[node name="Exit" type="AudioStreamPlayer" parent="Control" unique_id=881604062]
-stream = ExtResource("10_67wkt")
-
-[node name="Start" type="AudioStreamPlayer" parent="Control" unique_id=626351255]
-stream = ExtResource("11_3ido1")
-
-[node name="Background" type="AudioStreamPlayer" parent="Control" unique_id=1593705709]
-stream = ExtResource("12_cerne")
-
 [node name="Label" type="Label" parent="Control" unique_id=1019679627]
 layout_mode = 1
 anchors_preset = 5
@@ -184,6 +173,10 @@ theme_override_font_sizes/font_size = 120
 text = "You Win!
 "
 label_settings = SubResource("LabelSettings_3myxc")
+
+[node name="YouWin_Yay" type="AudioStreamPlayer" parent="." unique_id=117289098]
+stream = ExtResource("11_3ido1")
+autoplay = true
 
 [connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/PlayAgain_Button" to="Control" method="_on_play_again_pressed"]
 [connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/Exit_Button" to="Control" method="_on_exit_button_pressed"]

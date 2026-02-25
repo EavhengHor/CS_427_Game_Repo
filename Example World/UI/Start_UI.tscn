@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://db58ho8eoy0ac" path="res://Example World/UI/StartUI.gd" id="1_5hcg7"]
 [ext_resource type="Texture2D" uid="uid://c83olccgcccpb" path="res://Example World/UI/happypotato.png" id="2_krd1q"]
-[ext_resource type="Texture2D" uid="uid://snh3h0w0gbve" path="res://Example World/UI/potatonobg.png" id="3_8pif7"]
-[ext_resource type="Texture2D" uid="uid://cmnawrpjgt6dc" path="res://Example World/UI/cambodain_potato.jpg" id="3_wu1qf"]
+[ext_resource type="Texture2D" uid="uid://bfxe113kid1a0" path="res://Example World/UI/potatonobg_com.png" id="3_8pif7"]
+[ext_resource type="Texture2D" uid="uid://ba328x3ryboc6" path="res://Example World/UI/cambodain_potato.jpg" id="3_wu1qf"]
 [ext_resource type="Texture2D" uid="uid://c24ud4nbt23pg" path="res://Example World/ExtraFromEavheng/start-start.png" id="4_latlk"]
 [ext_resource type="Texture2D" uid="uid://dr2nrxoaklgtf" path="res://Example World/ExtraFromEavheng/start-end.png" id="5_ro4fb"]
 [ext_resource type="Texture2D" uid="uid://cb1gt7xxmkeec" path="res://Example World/ExtraFromEavheng/start-mid.png" id="6_knw8k"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bec8nfmichc6g" path="res://Example World/ExtraFromEavheng/exit-end.png" id="8_6b22m"]
 [ext_resource type="Texture2D" uid="uid://q4nte6hx253v" path="res://Example World/ExtraFromEavheng/exit-mid.png" id="9_pd4sy"]
 [ext_resource type="AudioStream" uid="uid://cccc0j1ehfr1q" path="res://Example World/ExtraFromEavhengAudio/potato-button-click.mp3" id="10_6b22m"]
+[ext_resource type="Texture2D" uid="uid://c1tpcq30eyagj" path="res://Example World/UI/howtoplay.png" id="10_wu1qf"]
 [ext_resource type="AudioStream" uid="uid://bsfvq2u25ru8g" path="res://Example World/ExtraFromEavhengAudio/yayyyyy.mp3" id="11_pd4sy"]
 [ext_resource type="AudioStream" uid="uid://6fvjpge7qvvs" path="res://Example World/ExtraFromEavhengAudio/background.mp3" id="12_krd1q"]
 
@@ -117,10 +118,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -290.0
-offset_right = 240.0
-offset_bottom = 290.0
+offset_left = -245.14648
+offset_top = -220.00897
+offset_right = 234.85352
+offset_bottom = 613.9911
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -131,13 +132,21 @@ texture_normal = ExtResource("4_latlk")
 texture_pressed = ExtResource("5_ro4fb")
 texture_hover = ExtResource("6_knw8k")
 
-[node name="Exit_Button" type="TextureButton" parent="Control/Cardboard_Background/VBoxContainer" unique_id=660466285]
+[node name="Exit_Button2" type="TextureButton" parent="Control/Cardboard_Background/VBoxContainer" unique_id=1342513121]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("7_h4dix")
 texture_pressed = ExtResource("8_6b22m")
 texture_hover = ExtResource("9_pd4sy")
+
+[node name="How_To_Play" type="TextureButton" parent="Control/Cardboard_Background/VBoxContainer" unique_id=660466285]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("10_wu1qf")
+texture_pressed = ExtResource("10_wu1qf")
+texture_hover = ExtResource("10_wu1qf")
 
 [node name="Exit" type="AudioStreamPlayer" parent="Control" unique_id=881604062]
 stream = ExtResource("10_6b22m")
@@ -149,4 +158,5 @@ stream = ExtResource("11_pd4sy")
 stream = ExtResource("12_krd1q")
 
 [connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/Start_Button" to="Control" method="_on_start_button_pressed"]
-[connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/Exit_Button" to="Control" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/Exit_Button2" to="Control" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/How_To_Play" to="Control" method="_on_exit_button_pressed"]
