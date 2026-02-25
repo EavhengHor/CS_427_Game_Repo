@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://oc13h3au02ro" path="res://Player_Controller/player_character.tscn" id="10_nucft"]
 [ext_resource type="PackedScene" uid="uid://cbr803ay86e8p" path="res://Example World/Level/Level_1/minion.tscn" id="13_1f6gj"]
 [ext_resource type="AudioStream" uid="uid://8ckou6jg2u0t" path="res://Example World/ExtraFromEavhengAudio/losingSound.mp3" id="13_u04gx"]
+[ext_resource type="Texture2D" uid="uid://blyf84l5u6mnw" path="res://Example World/ExtraFromEavheng/DayEnvironmentHDRI098_1K_TONEMAPPED.jpg" id="14_iylxq"]
 [ext_resource type="PackedScene" uid="uid://dkrc6n7fnpyy4" path="res://Example World/AssetForPlayer/PotatoBotBoss/potato.glb" id="14_mju56"]
-[ext_resource type="Texture2D" uid="uid://dimvmdt4cnh2a" path="res://Example World/Level/Level_1/asset/ai_generated_background.png" id="14_u04gx"]
 [ext_resource type="PackedScene" uid="uid://bo6viygofawpl" path="res://Example World/Level/Level_1/target.tscn" id="17_iylxq"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_4r2lv"]
@@ -73,10 +73,11 @@ radius = 6.716
 radius = 200.0
 height = 200.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hlnu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ng1ie"]
 cull_mode = 1
-shading_mode = 0
-albedo_texture = ExtResource("14_u04gx")
+albedo_texture = ExtResource("14_iylxq")
+grow = true
+grow_amount = 16.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iylxq"]
 size = Vector3(1, 1, 4.434387)
@@ -624,9 +625,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4593034, 0.31267834, 1.352
 shape = SubResource("SphereShape3D_82y80")
 
 [node name="Background" type="MeshInstance3D" parent="." unique_id=20685193]
-transform = Transform3D(-0.6638275, 0.04448872, 0.7465613, 0.029892828, 0.9990096, -0.03295238, -0.7472879, 0.00044210255, -0.66450006, -0.279, 82.11691, 86.854614)
+transform = Transform3D(-0.6638275, 0.04448872, 0.7465613, 0.029892828, 0.9990096, -0.03295238, -0.7472879, 0.00044210255, -0.66450006, -0.279, 56.145218, 86.854614)
 mesh = SubResource("SphereMesh_a5yjk")
-surface_material_override/0 = SubResource("StandardMaterial3D_3hlnu")
+surface_material_override/0 = SubResource("StandardMaterial3D_ng1ie")
 
 [node name="EnemySpawner1" type="Node3D" parent="." unique_id=427661004 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28.726786)

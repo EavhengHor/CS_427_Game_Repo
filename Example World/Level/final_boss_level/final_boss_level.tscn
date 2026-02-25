@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bklmryrjodipq"]
 
 [ext_resource type="Environment" uid="uid://bqp54syxqnqww" path="res://Player_Controller/world_environment.tres" id="1_13aek"]
-[ext_resource type="Texture2D" uid="uid://cf3wben1qvvun" path="res://Example World/ExtraFromEavheng/lava.png" id="2_r8h3p"]
+[ext_resource type="Texture2D" uid="uid://dj3cv7e44bfrt" path="res://Example World/ExtraFromEavheng/Lava004_1K-JPG_Emission.jpg" id="2_glfmx"]
 [ext_resource type="PackedScene" uid="uid://oc13h3au02ro" path="res://Player_Controller/player_character.tscn" id="2_y0onw"]
 [ext_resource type="Script" uid="uid://dlmd3nkdrfgnf" path="res://Example World/Level/final_boss_level/giant_potato.gd" id="3_r8h3p"]
 [ext_resource type="PackedScene" uid="uid://cbr803ay86e8p" path="res://Example World/Level/Level_1/minion.tscn" id="5_ov2gd"]
@@ -19,8 +19,8 @@
 material = SubResource("StandardMaterial3D_qnmda")
 size = Vector3(100, 1, 100)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ov2gd"]
-albedo_texture = ExtResource("2_r8h3p")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c83i1"]
+albedo_texture = ExtResource("2_glfmx")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_13aek"]
 size = Vector3(100, 1, 100)
@@ -33,9 +33,9 @@ height = 13.612
 radius = 200.0
 height = 200.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8h3p"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t782e"]
 cull_mode = 1
-albedo_texture = ExtResource("2_r8h3p")
+albedo_texture = ExtResource("2_glfmx")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ov2gd"]
 size = Vector3(100, 40, 1)
@@ -52,7 +52,7 @@ compositor = SubResource("Compositor_r8h3p")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=476620392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3838753, 0)
 mesh = SubResource("BoxMesh_qnmda")
-surface_material_override/0 = SubResource("StandardMaterial3D_ov2gd")
+surface_material_override/0 = SubResource("StandardMaterial3D_c83i1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=72652754]
 shape = SubResource("BoxShape3D_13aek")
@@ -88,7 +88,7 @@ transform = Transform3D(0.17311764, 3.4955049, 0.038406275, 0.8502003, -0.004803
 [node name="Background" type="MeshInstance3D" parent="." unique_id=40295326]
 transform = Transform3D(-0.6638275, 0.04448872, 0.7465613, 0.029892828, 0.9990096, -0.03295238, -0.7472879, 0.00044210255, -0.66450006, -0.279, 82.11691, 10.893768)
 mesh = SubResource("SphereMesh_y0onw")
-surface_material_override/0 = SubResource("StandardMaterial3D_r8h3p")
+surface_material_override/0 = SubResource("StandardMaterial3D_t782e")
 
 [node name="WorldBorder" type="StaticBody3D" parent="." unique_id=1555822788]
 script = ExtResource("8_glfmx")
