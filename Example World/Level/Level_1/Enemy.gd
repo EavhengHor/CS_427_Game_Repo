@@ -1,9 +1,6 @@
 extends CharacterBody3D
 
 @export var speed := 6.0
-@export var intro_sound: AudioStream
-@export var loop_sound: AudioStream
-@export var losing_sound: AudioStream  # <--- NEW: Drag losingSound.mp3 here in Inspector
 
 var start_pos := Vector3(0.482, 0.268, 20.638)
 var target_pos := Vector3(0.482, 0.268, 191.0)
@@ -11,9 +8,9 @@ var target_pos := Vector3(0.482, 0.268, 191.0)
 var moving := false
 var can_detect := false
 var can_restart := false
+var can_go_to_boss := false
 
 @onready var label := $Label3D
-@onready var boss_music := get_node("/root/World/BossMusic")
 
 func _ready():
 	print("Bot ready")
@@ -23,75 +20,33 @@ func _ready():
 	moving = false
 	can_detect = false
 	can_restart = false
+	can_go_to_boss = false
 	
 	# Hide potato + label
 	hide()
 	label.visible = false
 	
-	# ▶ Play intro sound once
-	if boss_music:
-		boss_music.stop()
-		boss_music.stream = intro_sound
-		boss_music.play()
-		# Connect signal only if not already connected to avoid errors
-		if not boss_music.finished.is_connected(_on_intro_finished):
-			boss_music.finished.connect(_on_intro_finished)
-	
-	# ⏳ Wait 6 seconds (hidden)
+	# ⏳ Wait exactly 3 seconds
 	await get_tree().create_timer(3.0).timeout
 	
-	# 👀 Show potato
+	# 👀 Show potato and enable movement instantly
 	show()
 	label.visible = true
 	label.text = "Catch me if u can"
 	
-	# ⏳ Wait 3 seconds before moving
-	await get_tree().create_timer(3.0).timeout
-	
-	# 🏃 Enable movement & detection
 	can_detect = true
 	moving = true
 
-func _on_intro_finished():
-	print("Intro finished → looping music")
-	
-	# Disconnect intro signal so it doesn't trigger again
-	if boss_music.finished.is_connected(_on_intro_finished):
-		boss_music.finished.disconnect(_on_intro_finished)
-
-	boss_music.stream = loop_sound
-	boss_music.play()
-	
-	if not boss_music.finished.is_connected(_on_loop_finished):
-		boss_music.finished.connect(_on_loop_finished)
-
-func _on_loop_finished():
-	# Keeps playing the loop sound
-	boss_music.play()
-
 # ---------------------------------------------------------
-# NEW FUNCTION: Call this when the player dies!
+# Called when the player dies
 # ---------------------------------------------------------
 func player_died():
-	print("Player Died! Stopping music and playing loss sound.")
+	print("Player Died!")
 	
 	moving = false
 	can_detect = false
-	can_restart = true # Allows restarting if you want
+	can_restart = true # Allows restarting Level 1
 	label.text = "Game Over\nPress P to restart"
-	
-	# 1. Stop current music
-	boss_music.stop()
-	
-	# 2. IMPORTANT: Disconnect the loop signal so the 'losing' sound doesn't loop
-	if boss_music.finished.is_connected(_on_loop_finished):
-		boss_music.finished.disconnect(_on_loop_finished)
-	if boss_music.finished.is_connected(_on_intro_finished):
-		boss_music.finished.disconnect(_on_intro_finished)
-		
-	# 3. Play the losing sound
-	boss_music.stream = losing_sound
-	boss_music.play()
 
 # ---------------------------------------------------------
 
@@ -112,13 +67,7 @@ func _on_area_3d_body_entered(body):
 		label.text = "Caught!\nPress P to enter Final Boss"
 		moving = false
 		can_restart = false # We aren't restarting Level 1
-		
-		# We use a new variable to check if the player can transition
 		can_go_to_boss = true
-		boss_music.stop()
-
-# Add this variable at the top of your script
-var can_go_to_boss := false
 
 func _input(event):
 	# If caught, press P to go to the Boss Level

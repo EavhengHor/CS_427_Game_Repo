@@ -19,7 +19,6 @@ config/description="LOL Potato"
 run/main_scene="uid://b3ehylernk46p"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/image="uid://snh3h0w0gbve"
-config/icon="uid://crbmmr5dobu4n"
 
 [filesystem]
 

@@ -1,18 +1,15 @@
 [gd_scene format=3 uid="uid://dniyrkkdwf3cb"]
 
-[ext_resource type="Texture2D" uid="uid://dqgno6bpaq7h6" path="res://Example World/ExtraFromEavheng/fires.png" id="4_2w12e"]
+[ext_resource type="Texture2D" uid="uid://dms1u45s8228b" path="res://Example World/ExtraFromEavheng/fires.png" id="4_2w12e"]
 [ext_resource type="PackedScene" uid="uid://b7nmqssa81d55" path="res://Example World/UI/GameOverUI.tscn" id="4_3hlnu"]
 [ext_resource type="Texture2D" uid="uid://pei31bx87dwx" path="res://Example World/ExtraFromEavheng/grass.jpg" id="4_q8tgt"]
 [ext_resource type="Script" uid="uid://dpy2y04nd1q1k" path="res://Example World/Level/Level_1/Enemy.gd" id="5_bk4di"]
-[ext_resource type="AudioStream" uid="uid://dkxrc185ujsd1" path="res://Example World/ExtraFromEavheng/ChillStart.mp3" id="5_yy5lb"]
-[ext_resource type="AudioStream" uid="uid://bbhtrpopa4dag" path="res://Example World/ExtraFromEavheng/Boss effect.mp3" id="6_2w12e"]
 [ext_resource type="ArrayMesh" uid="uid://bk16l38m5heht" path="res://Example World/AssetForMap/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/obj/Bush_4_F_Color1.obj" id="6_eeo6j"]
 [ext_resource type="ArrayMesh" uid="uid://g2bxewq01ydi" path="res://Example World/AssetForMap/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/obj/Bush_2_F_Color1.obj" id="7_cjjym"]
 [ext_resource type="Environment" uid="uid://bqp54syxqnqww" path="res://Player_Controller/world_environment.tres" id="7_tfq4t"]
 [ext_resource type="ArrayMesh" uid="uid://cj1qjgaxh77rx" path="res://Example World/AssetForMap/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/obj/Bush_4_E_Color1.obj" id="8_hgn0s"]
 [ext_resource type="PackedScene" uid="uid://oc13h3au02ro" path="res://Player_Controller/player_character.tscn" id="10_nucft"]
 [ext_resource type="PackedScene" uid="uid://cbr803ay86e8p" path="res://Example World/Level/Level_1/minion.tscn" id="13_1f6gj"]
-[ext_resource type="AudioStream" uid="uid://8ckou6jg2u0t" path="res://Example World/ExtraFromEavhengAudio/losingSound.mp3" id="13_u04gx"]
 [ext_resource type="Texture2D" uid="uid://blyf84l5u6mnw" path="res://Example World/ExtraFromEavheng/DayEnvironmentHDRI098_1K_TONEMAPPED.jpg" id="14_iylxq"]
 [ext_resource type="PackedScene" uid="uid://dkrc6n7fnpyy4" path="res://Example World/AssetForPlayer/PotatoBotBoss/potato.glb" id="14_mju56"]
 [ext_resource type="PackedScene" uid="uid://bo6viygofawpl" path="res://Example World/Level/Level_1/target.tscn" id="17_iylxq"]
@@ -20,7 +17,6 @@
 [sub_resource type="SphereMesh" id="SphereMesh_4r2lv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mju56"]
-load_path = "res://.godot/imported/cea9746f-90a6-4574-8e54-b5da1f088e2c.jpg-43571f51401989167b17517f377d6e73.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo61t"]
 albedo_texture = SubResource("CompressedTexture2D_mju56")
@@ -40,7 +36,7 @@ subdivide_depth = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_etv36"]
 size = Vector3(18, 0.1, 200.264)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uptxv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mju56"]
 albedo_texture = ExtResource("4_2w12e")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_eeo6j"]
@@ -130,7 +126,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.031784, 0, 16.179125)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall5" type="StaticBody3D" parent="LevelGeometry" unique_id=1906034117]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5110359, 0, 21.372505)
@@ -139,7 +135,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5110359, 0, 21.372505)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall6" type="StaticBody3D" parent="LevelGeometry" unique_id=1127184942]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.480551, 0, 24.765371)
@@ -148,7 +144,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.480551, 0, 24.765371)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall7" type="StaticBody3D" parent="LevelGeometry" unique_id=1374763798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.649375, 0, 28.880928)
@@ -157,7 +153,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.649375, 0, 28.880928)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall8" type="StaticBody3D" parent="LevelGeometry" unique_id=283501618]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2055569, 0, 33.987194)
@@ -166,7 +162,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2055569, 0, 33.987194)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall9" type="StaticBody3D" parent="LevelGeometry" unique_id=965827443]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5334511, 0, 37.423775)
@@ -175,7 +171,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5334511, 0, 37.423775)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall10" type="StaticBody3D" parent="LevelGeometry" unique_id=1940359730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6454353, 0, 43.890133)
@@ -184,7 +180,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6454353, 0, 43.890133)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall11" type="StaticBody3D" parent="LevelGeometry" unique_id=2026233951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 48.412724)
@@ -193,7 +189,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 48.412724)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall12" type="StaticBody3D" parent="LevelGeometry" unique_id=890012173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.792631, 0, 55.26759)
@@ -202,7 +198,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.792631, 0, 55.26759)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall13" type="StaticBody3D" parent="LevelGeometry" unique_id=1586590416]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 62.457344)
@@ -211,7 +207,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 62.457344)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall14" type="StaticBody3D" parent="LevelGeometry" unique_id=960423153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0461092, 0, 69.34836)
@@ -220,7 +216,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0461092, 0, 69.34836)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall15" type="StaticBody3D" parent="LevelGeometry" unique_id=1067075222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 74.6456)
@@ -229,7 +225,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 74.6456)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall16" type="StaticBody3D" parent="LevelGeometry" unique_id=2065503281]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.59241, 0, 77.224884)
@@ -238,7 +234,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.59241, 0, 77.224884)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall17" type="StaticBody3D" parent="LevelGeometry" unique_id=800562689]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 81.267395)
@@ -247,7 +243,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 81.267395)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall18" type="StaticBody3D" parent="LevelGeometry" unique_id=1568791427]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3036175, 0, 89.336685)
@@ -256,7 +252,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3036175, 0, 89.336685)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall19" type="StaticBody3D" parent="LevelGeometry" unique_id=1370792907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 93.97777)
@@ -265,7 +261,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 93.97777)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1653996, 4.705902, 3.401822)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall20" type="StaticBody3D" parent="LevelGeometry" unique_id=1900323467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 99.433426)
@@ -274,7 +270,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 99.433426)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall21" type="StaticBody3D" parent="LevelGeometry" unique_id=530251304]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.294422, 0, 103.9616)
@@ -283,7 +279,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.294422, 0, 103.9616)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall22" type="StaticBody3D" parent="LevelGeometry" unique_id=895601754]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9701939, 0, 111.25895)
@@ -292,7 +288,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9701939, 0, 111.25895)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall23" type="StaticBody3D" parent="LevelGeometry" unique_id=1966036784]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2226067, 0, 118.26584)
@@ -301,7 +297,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2226067, 0, 118.26584)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall24" type="StaticBody3D" parent="LevelGeometry" unique_id=1889971896]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4704285, 0, 127.266495)
@@ -310,7 +306,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4704285, 0, 127.266495)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeometry/Wall24" unique_id=1361588991]
 shape = SubResource("SphereShape3D_eeo6j")
@@ -322,7 +318,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8730011, 0, 133.34457)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8858204, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall26" type="StaticBody3D" parent="LevelGeometry" unique_id=498462235]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7197247, 0, 140.35712)
@@ -331,7 +327,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7197247, 0, 140.35712)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall27" type="StaticBody3D" parent="LevelGeometry" unique_id=1901711244]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.048029, 0, 147.94836)
@@ -340,7 +336,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.048029, 0, 147.94836)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall28" type="StaticBody3D" parent="LevelGeometry" unique_id=968438277]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1264248, 0, 159.06076)
@@ -349,7 +345,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1264248, 0, 159.06076)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall29" type="StaticBody3D" parent="LevelGeometry" unique_id=2114416794]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5326443, 0, 171.5382)
@@ -358,7 +354,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5326443, 0, 171.5382)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Wall30" type="StaticBody3D" parent="LevelGeometry" unique_id=237593028]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.923149, 0, 177.83905)
@@ -367,7 +363,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.923149, 0, 177.83905)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42028427, 4.705902, 3.401825)
 use_collision = true
 height = 10.0
-material = SubResource("StandardMaterial3D_uptxv")
+material = SubResource("StandardMaterial3D_mju56")
 
 [node name="Bush4FColor1" type="MeshInstance3D" parent="LevelGeometry" unique_id=4789794]
 transform = Transform3D(-0.4316697, 2.7813514e-09, 2.968781, 0.028912336, 2.9998574, 0.0042039454, -2.9686403, 0.02921629, -0.4316492, -10.223218, -0.029400289, 1.5161772)
@@ -596,15 +592,9 @@ shape = SubResource("ConcavePolygonShape3D_cjjym")
 
 [node name="physics_objects" type="Node3D" parent="." unique_id=1910628291]
 
-[node name="BossMusic" type="AudioStreamPlayer" parent="." unique_id=578580319]
-volume_db = -10.0
-
 [node name="Bot" type="CharacterBody3D" parent="." unique_id=1854767119]
 transform = Transform3D(0.04393327, 0, -0.99903446, 0, 1, 0, 0.99903446, 0, 0.04393327, 0.482, 0.268, 7.955686)
 script = ExtResource("5_bk4di")
-intro_sound = ExtResource("5_yy5lb")
-loop_sound = ExtResource("6_2w12e")
-losing_sound = ExtResource("13_u04gx")
 
 [node name="Sketchfab_Scene" parent="Bot" unique_id=1336363072 instance=ExtResource("14_mju56")]
 transform = Transform3D(0.17311764, 3.4955049, 0.038406275, 0.8502003, -0.0048030475, -3.3951635, -3.3907506, 0.17726162, -0.8493459, 2.0198512, 2.051012, 1.6821218)
