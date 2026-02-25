@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+signal health_updated(new_health)
 @export_group("Stats")
 @export var max_health: int = 1000
 @export var speed := 8.0
@@ -102,9 +103,12 @@ func Hit_Successful(damage: int, _dir = Vector3.ZERO, _pos = Vector3.ZERO):
 	current_health -= int(damage)
 	print("POTATO HIT! HP: ", current_health)
 	
+	# 2. ADD THIS LINE: Tell the game the health changed
+	health_updated.emit(current_health)
+	
 	if current_health <= 0:
 		die()
-
+		
 func player_lost():
 	moving = false
 	spawn_timer.stop()

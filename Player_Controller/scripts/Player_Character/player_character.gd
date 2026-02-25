@@ -13,6 +13,7 @@ extends CharacterBody3D
 
 @export_category("UI & System")
 @export var game_over_screen: PackedScene 
+@export var boss_node: Node # <--- ADD THIS EXACT LINE
 @export var subviewport_camera: Camera3D
 @export var main_camera: Camera3D
 @export var animation_tree: AnimationTree
@@ -84,22 +85,24 @@ func _ready() -> void:
 	if raycast:
 		raycast.add_exception(self)
 	
-	# LEVEL-BASED INITIALIZATION
+# LEVEL-BASED INITIALIZATION
 	if is_boss_level:
-		# BOSS LEVEL LOGIC
-		if has_node("CanvasLayer"):
-			# Assuming your UI script can take custom text or has a specific function
-			# If dialog_label is assigned, we update it directly
-			if dialog_label:
-				dialog_label.text = "Are you ready?"
+		# --- THE BULLETPROOF CONNECTION ---
+		if boss_node != null:
+			boss_node.health_updated.connect(update_boss_hud)
+			update_boss_hud(boss_node.max_health)
+			print("🔥🔥🔥 ABSOLUTE SUCCESS: UI CONNECTED! 🔥🔥🔥")
+		else:
+			print("❌ ERROR: YOU FORGOT TO DRAG THE BOSS INTO THE INSPECTOR! ❌")
+			
+		if has_node("CanvasLayer") and $CanvasLayer.has_method("play_intro_dialog"):
 			$CanvasLayer.play_intro_dialog()
 		
-		# No wait time for boss level
 		can_move = true
 		print("Boss Level: Movement enabled immediately.")
 	else:
 		# LEVEL 1 LOGIC
-		if has_node("CanvasLayer"):
+		if has_node("CanvasLayer") and $CanvasLayer.has_method("play_intro_dialog"):
 			$CanvasLayer.play_intro_dialog()
 		
 		can_move = false
@@ -169,6 +172,8 @@ func shoot() -> void:
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider.has_method("Hit_Successful"):
+			# Because the player deals 1 damage here, make sure your Boss script 
+			# accepts damage >= 1, otherwise it will ignore the hit!
 			collider.Hit_Successful(1)
 
 func calculate_movement_parameters() -> void:
@@ -232,11 +237,12 @@ func sprint_replenish(delta) -> void:
 		sprint_bar_Value = (sprint_time_remaining / sprint_time) * 100
 	else:
 		sprint_bar_Value = (sprint_timer.time_left / sprint_time) * 100
-	sprint_bar.value = sprint_bar_Value
-	if sprint_bar_Value == 100:
-		sprint_bar.hide()
-	else:
-		sprint_bar.show()
+	if sprint_bar:
+		sprint_bar.value = sprint_bar_Value
+		if sprint_bar_Value == 100:
+			sprint_bar.hide()
+		else:
+			sprint_bar.show()
 
 func _process(_delta: float) -> void:
 	if subviewport_camera:
@@ -322,3 +328,24 @@ func die():
 			add_child(screen)
 	else:
 		get_tree().reload_current_scene()
+
+
+# --- NEW: UPDATE HUD FUNCTION ---
+func update_boss_hud(new_health: int):
+	# 1. Update the Boss Health Text
+	if %DialogLabel2:
+		if new_health > 0:
+			%DialogLabel2.text = "[center][color=red]EVIL POTATO HP: " + str(new_health) + "[/color][/center]"
+		else:
+			%DialogLabel2.text = "[center][color=green]POTATO MASHED![/color][/center]"
+
+	# 2. Update the Visual Progress Bar
+	if %BossHealthBar:
+		var tween = get_tree().create_tween()
+		# THE FIX: Wrap new_health in float() so the Tween accepts it!
+		tween.tween_property(%BossHealthBar, "value", float(new_health), 0.2)
+		
+		# Bulletproof Backup Plan: 
+		# If the tween ever gives you trouble again, delete the two tween lines 
+		# above and just use this one line to instantly snap the bar down:
+		# %BossHealthBar.value = new_health
