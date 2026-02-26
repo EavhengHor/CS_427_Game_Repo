@@ -549,6 +549,7 @@ skeleton = NodePath("../..")
 [node name="StaticBody3D" type="StaticBody3D" parent="LevelGeometry/Bush4FColor17" unique_id=1805846532]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeometry/Bush4FColor17/StaticBody3D" unique_id=1991936406]
+transform = Transform3D(0.9999999, 0, -1.8626451e-09, 0, 0.99999994, -3.3469405e-10, 0, -1.3242243e-09, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_cjjym")
 
 [node name="Bush4FColor18" type="MeshInstance3D" parent="LevelGeometry" unique_id=1576742572]
@@ -660,25 +661,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7343243, 0.1744181, 24.2123
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4924345, 0, 134.53427)
 
 [node name="CharacterBody3D" parent="EnemySpawner7" unique_id=1113338043 instance=ExtResource("13_1f6gj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7343242, 0.1744181, 51.225647)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.556327, 0.1744181, 46.962555)
 
 [node name="EnemySpawner8" type="Node3D" parent="." unique_id=303314753 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4924345, 0, 134.53427)
 
 [node name="CharacterBody3D" parent="EnemySpawner8" unique_id=1651560058 instance=ExtResource("13_1f6gj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9131954, 0.1744181, 51.403366)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5216246, 0.1744181, 57.300095)
 
 [node name="EnemySpawner9" type="Node3D" parent="." unique_id=2080349941 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1608315, 0, 134.53427)
 
 [node name="CharacterBody3D" parent="EnemySpawner9" unique_id=129337985 instance=ExtResource("13_1f6gj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4640238, 0.1744181, 48.065826)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4640238, 0.1744181, 47.807343)
 
 [node name="EnemySpawner10" type="Node3D" parent="." unique_id=556659682 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.758399, 0, 134.53427)
 
 [node name="CharacterBody3D" parent="EnemySpawner10" unique_id=1541663904 instance=ExtResource("13_1f6gj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9131954, 0.1744181, 51.916428)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54793, 0.1744181, 50.001404)
 
 [node name="EnemySpawner11" type="Node3D" parent="." unique_id=1532050591 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4924345, 0, 134.53427)
@@ -696,7 +697,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4773684, 0.1744181, 41.4346
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1608315, 0, 134.53427)
 
 [node name="CharacterBody3D" parent="EnemySpawner13" unique_id=1030619521 instance=ExtResource("13_1f6gj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9131954, 0.1744181, 50.9097)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.020384, 0.1744181, 57.872177)
 
 [node name="EnemySpawner14" type="Node3D" parent="." unique_id=778732692 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.758399, 0, 134.53427)

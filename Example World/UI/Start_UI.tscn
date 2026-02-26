@@ -15,6 +15,9 @@
 [ext_resource type="AudioStream" uid="uid://bsfvq2u25ru8g" path="res://Example World/ExtraFromEavhengAudio/yayyyyy.mp3" id="11_pd4sy"]
 [ext_resource type="AudioStream" uid="uid://6fvjpge7qvvs" path="res://Example World/ExtraFromEavhengAudio/background.mp3" id="12_krd1q"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pif7"]
+bg_color = Color(1, 0.45882353, 0.19215687, 1)
+
 [node name="UI" type="Control" unique_id=656656133]
 layout_mode = 3
 anchors_preset = 8
@@ -44,6 +47,51 @@ offset_bottom = 386.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5hcg7")
+
+[node name="HowToPlayMenu" type="Panel" parent="Control" unique_id=1864951117]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1236.3344
+offset_top = -432.15845
+offset_right = -1236.3344
+offset_bottom = -432.15845
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.686696, 2.0883508)
+theme_override_styles/panel = SubResource("StyleBoxFlat_8pif7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/HowToPlayMenu" unique_id=1997847970]
+layout_mode = 0
+offset_left = 193.74847
+offset_top = 190.47763
+offset_right = 1287.2778
+offset_bottom = 731.8103
+bbcode_enabled = true
+text = "[center][b]HOW TO PLAY[/b]
+
+In your first level, don't try to kill the potato... try to [color=green]catch it![/color]
+
+The [color=yellow]burger/wall[/color] will spawn and you have to kill them.
+
+In the final level, [color=red]boss health[/color] will appear and you will be able to kill the boss![/center]"
+
+[node name="Back_Button" type="Button" parent="Control/HowToPlayMenu" unique_id=1147830456]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 209.43451
+offset_top = -131.43079
+offset_right = 259.4345
+offset_bottom = -100.430786
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+text = "BACK"
 
 [node name="PotatoBorder_Background" type="NinePatchRect" parent="Control" unique_id=1729863300]
 z_index = 1
@@ -94,7 +142,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_8pif7")
 
-[node name="Cardboard_Background" type="TextureRect" parent="Control" unique_id=898057727]
+[node name="MainMenu" type="TextureRect" parent="Control" unique_id=898057727]
 light_mask = 2
 layout_mode = 1
 anchors_preset = 8
@@ -111,7 +159,7 @@ grow_vertical = 2
 texture = ExtResource("3_wu1qf")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Cardboard_Background" unique_id=2057704625]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MainMenu" unique_id=2057704625]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -125,14 +173,14 @@ offset_bottom = 613.9911
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start_Button" type="TextureButton" parent="Control/Cardboard_Background/VBoxContainer" unique_id=2145881790]
+[node name="Start_Button" type="TextureButton" parent="Control/MainMenu/VBoxContainer" unique_id=2145881790]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("4_latlk")
 texture_pressed = ExtResource("5_ro4fb")
 texture_hover = ExtResource("6_knw8k")
 
-[node name="Exit_Button2" type="TextureButton" parent="Control/Cardboard_Background/VBoxContainer" unique_id=1342513121]
+[node name="Exit_Button2" type="TextureButton" parent="Control/MainMenu/VBoxContainer" unique_id=1342513121]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -140,7 +188,7 @@ texture_normal = ExtResource("7_h4dix")
 texture_pressed = ExtResource("8_6b22m")
 texture_hover = ExtResource("9_pd4sy")
 
-[node name="How_To_Play" type="TextureButton" parent="Control/Cardboard_Background/VBoxContainer" unique_id=660466285]
+[node name="How_To_Play" type="TextureButton" parent="Control/MainMenu/VBoxContainer" unique_id=660466285]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -157,6 +205,7 @@ stream = ExtResource("11_pd4sy")
 [node name="Background" type="AudioStreamPlayer" parent="Control" unique_id=1593705709]
 stream = ExtResource("12_krd1q")
 
-[connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/Start_Button" to="Control" method="_on_start_button_pressed"]
-[connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/Exit_Button2" to="Control" method="_on_exit_button_pressed"]
-[connection signal="pressed" from="Control/Cardboard_Background/VBoxContainer/How_To_Play" to="Control" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Control/HowToPlayMenu/Back_Button" to="Control" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Control/MainMenu/VBoxContainer/Start_Button" to="Control" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/MainMenu/VBoxContainer/Exit_Button2" to="Control" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Control/MainMenu/VBoxContainer/How_To_Play" to="Control" method="_on_how_to_play_pressed"]

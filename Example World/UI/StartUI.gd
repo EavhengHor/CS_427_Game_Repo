@@ -1,66 +1,73 @@
 extends Control
 
-@onready var start_button = $Cardboard_Background/VBoxContainer/Start_Button
-@onready var exit_button = $Cardboard_Background/VBoxContainer/Exit_Button
+@onready var main_menu = $MainMenu
+@onready var how_to_play_menu = $HowToPlayMenu
+
+# --- NEW: Potato Background Nodes ---
+@onready var potato_bg_1 = $PotatoBorder_Background
+@onready var potato_bg_2 = $PotatoBorder_Background2
+@onready var potato_bg_3 = $PotatoBorder_Background3
+
+# Button paths
+@onready var start_button = $MainMenu/VBoxContainer/Start_Button
+@onready var exit_button = $MainMenu/VBoxContainer/Exit_Button2 
 
 # Audio Nodes
 @onready var start_sound = $Start
 @onready var exit_sound = $Exit
 @onready var background_music = $Background
 
-# 1. Add this variable to track if a button was already clicked
 var is_transitioning = false
 
 func _ready():
-	# Start playing background music immediately
 	if background_music:
 		background_music.play()
-	else:
-		print("ERROR: Background music node not found")
+	
+	if main_menu: main_menu.show()
+	if how_to_play_menu: how_to_play_menu.hide()
 
-	# --- FIXED: REMOVED MANUAL CONNECTIONS ---
-	# The signals are already connected in the Editor, so we don't need code here!
+# --- HOW TO PLAY SWAP ---
+
+func _on_how_to_play_pressed():
+	if is_transitioning: return
+	
+	if main_menu and how_to_play_menu:
+		main_menu.hide()
+		how_to_play_menu.show()
+		
+		# Hide the potatoes when the orange screen opens!
+		if potato_bg_1: potato_bg_1.hide()
+		if potato_bg_2: potato_bg_2.hide()
+		if potato_bg_3: potato_bg_3.hide()
+
+func _on_back_button_pressed():
+	if is_transitioning: return
+	
+	if main_menu and how_to_play_menu:
+		how_to_play_menu.hide()
+		main_menu.show()
+		
+		# Bring the potatoes back when returning to the main menu!
+		if potato_bg_1: potato_bg_1.show()
+		if potato_bg_2: potato_bg_2.show()
+		if potato_bg_3: potato_bg_3.show()
+
+# --- ORIGINAL START/EXIT LOGIC ---
 
 func _on_start_button_pressed():
-	# 2. Check if we are already transitioning. If yes, stop here.
-	if is_transitioning:
-		return
-	
-	# 3. "Lock" the buttons so further clicks are ignored
+	if is_transitioning: return
 	is_transitioning = true
 	
-	print("Start button pressed!")
-	
-	# STOP the background music immediately
 	background_music.stop()
-	
-	# Play the start sound
 	start_sound.play()
-	
-	# Wait for start sound to finish
 	await start_sound.finished
-	
-	# Change scene
 	get_tree().change_scene_to_file("res://Example World/Level/Level_1/level_1_main.tscn")
 
 func _on_exit_button_pressed():
-	# 2. Check if we are already transitioning. If yes, stop here.
-	if is_transitioning:
-		return
-		
-	# 3. "Lock" the buttons
+	if is_transitioning: return
 	is_transitioning = true
 	
-	print("Exit button pressed!")
-	
-	# STOP the background music immediately
 	background_music.stop()
-	
-	# Play the exit sound
 	exit_sound.play()
-	
-	# Wait for exit sound to finish
 	await exit_sound.finished
-	
-	# Quit
 	get_tree().quit()

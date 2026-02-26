@@ -65,7 +65,7 @@ transform = Transform3D(-0.023524504, 0, -0.9997233, 0, 1, 0, 0.9997233, 0, -0.0
 is_boss_level = true
 
 [node name="Giant Potato" type="CharacterBody3D" parent="." unique_id=300762433 groups=["player"]]
-transform = Transform3D(-0.99984217, 0, -0.017766407, 0, 1, 0, 0.017766407, 0, -0.99984217, 29.806873, 0, 0.7293787)
+transform = Transform3D(-1.4997633, 0, -0.02664961, 0, 1.5, 0, 0.02664961, 0, -1.4997633, 29.806873, 0, 0.7293787)
 script = ExtResource("3_r8h3p")
 burger_scene = ExtResource("5_ov2gd")
 spawn_interval = 1.5
