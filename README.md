@@ -67,3 +67,6 @@ Special thanks to the creators whose assets helped bring this game to life:
 
 ---
 **Copyright © 2026 Eavheng Hor**
+
+**Note If my Electricity Died or my mum/dad come to close the outlet i am dead**
+**Self Hostted at (https://game.natsumi.space/)**
