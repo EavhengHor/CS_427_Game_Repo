@@ -66,4 +66,5 @@ Special thanks to the creators whose assets helped bring this game to life:
 3. Unzip the folder and run `CatchThePotato.exe` (Windows) or the equivalent executable for your OS.
 
 ---
-**Copyright © 2026 Eavheng Hor**
+**Note If my Electricity Died or my mum/dad come to close the outlet i am dead**
+**Self Hostted at (https://game.natsumi.space/)**
