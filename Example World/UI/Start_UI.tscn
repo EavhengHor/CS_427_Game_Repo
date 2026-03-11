@@ -16,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://6fvjpge7qvvs" path="res://Example World/ExtraFromEavhengAudio/background.mp3" id="12_krd1q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pif7"]
-bg_color = Color(1, 0.45882353, 0.19215687, 1)
+bg_color = Color(5.4869056e-06, 0.7474124, 0.63019794, 1)
 
 [node name="UI" type="Control" unique_id=656656133]
 layout_mode = 3
@@ -85,6 +85,49 @@ Shoot and destroy the [color=yellow][b]Burger Minions[/b][/color] that spawn to 
 The Boss Health Bar will appear. It is time to [b]kill the Giant Potato![/b][/center]"
 
 [node name="Back_Button" type="Button" parent="Control/HowToPlayMenu" unique_id=1147830456]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 209.43451
+offset_top = -131.43079
+offset_right = 259.4345
+offset_bottom = -100.430786
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+text = "BACK"
+
+[node name="EasterEgg" type="Panel" parent="Control" unique_id=768932344]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1236.3344
+offset_top = -432.15845
+offset_right = -1236.3344
+offset_bottom = -432.15845
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.686696, 2.0883508)
+theme_override_styles/panel = SubResource("StyleBoxFlat_8pif7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/EasterEgg" unique_id=123394245]
+layout_mode = 0
+offset_left = 193.74847
+offset_top = 190.47763
+offset_right = 1287.2778
+offset_bottom = 731.8103
+bbcode_enabled = true
+text = "[center][font_size=32][b]404 NOT FOUND[/b][/font_size]
+
+[color=blue][b]Oops! You tried, but this page doesn't exist...[/b][/color]
+
+[color=green][b]But hey, at least you tried! Thanks for trying, Easter egggies![/b][/color][/center]"
+
+[node name="Back_Button" type="Button" parent="Control/EasterEgg" unique_id=339693144]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -212,7 +255,19 @@ stream = ExtResource("11_pd4sy")
 [node name="Background" type="AudioStreamPlayer" parent="Control" unique_id=1593705709]
 stream = ExtResource("12_krd1q")
 
+[node name="EasterEggButton" type="TextureButton" parent="Control" unique_id=709343453]
+layout_mode = 0
+offset_left = 2696.0986
+offset_top = 1194.3365
+offset_right = 3169.0986
+offset_bottom = 1722.3365
+rotation = 3.1308308
+scale = Vector2(0.5856358, 0.38471255)
+texture_normal = ExtResource("2_krd1q")
+
 [connection signal="pressed" from="Control/HowToPlayMenu/Back_Button" to="Control" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Control/EasterEgg/Back_Button" to="Control" method="_on_easter_egg_back_pressed"]
 [connection signal="pressed" from="Control/MainMenu/VBoxContainer/Start_Button" to="Control" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Control/MainMenu/VBoxContainer/Exit_Button2" to="Control" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Control/MainMenu/VBoxContainer/How_To_Play" to="Control" method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="Control/EasterEggButton" to="Control" method="_on_easter_egg_button_pressed"]
