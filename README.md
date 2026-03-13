@@ -43,7 +43,7 @@ Special thanks to the creators whose assets helped bring this game to life:
 https://opengameart.org/content/pixel-spy-vs-spy
 * **Boss SFX:** [Final Boss Sound](https://pixabay.com/users/freesound_community-46691455/) via Pixabay
 https://pixabay.com/users/freesound_community-46691455/
-* **Video Game Boss Fiight by IHateTuesdays
+* Video Game Boss Fiight by IHateTuesdays
 https://pixabay.com/users/ihatetuesdays-39387169/
 
 ### **3D Models & Environment**
