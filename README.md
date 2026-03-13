@@ -1,6 +1,6 @@
 # 🎮 Catch the Potato
 **Developed by:** Eavheng Hor  
-**Version:** Alpha v0.1.0 (2026)
+**Version:** Release V1.0 (2026)
 
 A fun and fast-paced arcade game built in **Godot**. Test your reflexes by catching potatoes to score points in Level 1, then prepare for chaos as you face off against a giant mechanical boss in the final stage!
 
@@ -71,11 +71,32 @@ Special thanks to the creators whose assets helped bring this game to life:
 
 **Try to find the easter Egg
 
-### How to play and run the game
+# 🎮 How to Play & Run
 
-### 1 Download Unzip 2 Run the game 3 Please Run Anyway Because We cannot Sign the game.
+## 🚀 Getting Started
 
-### How to play WASD to move. Shoot with left click. P to go to next level after reaching the potato.
+1. **Download:** Grab the latest release ZIP file from the [Releases](link-to-your-release-here) section.
+2. **Unzip:** Extract the folder to your desired location.
+3. **Launch:** Double-click the game executable to start.
+
+> [!IMPORTANT]
+> **Security Note:** Because the game is currently unsigned, your computer may flag it. 
+> - **Windows:** Click "More Info" then **Run Anyway**.
+> - **macOS:** Right-click the app and select **Open**.
+
+---
+
+## 🕹️ Controls & Gameplay
+
+**The Goal:** Navigate the level, defeat enemies, and reach the **Potato** 🥔 to progress!
+
+| Action | Key / Input |
+| :--- | :--- |
+| **Movement** | `W` `A` `S` `D` |
+| **Shoot** | `Left Click` |
+| **Next Level** | `P` (Press once you reach the Potato) |
+
+---
 
 ### First Level No need to shoot the giant potato avoid/kill the burgers
 
