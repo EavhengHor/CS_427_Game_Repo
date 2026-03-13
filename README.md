@@ -14,14 +14,13 @@ Experience the potato-catching madness in action:
 
 ## 🚀 Alpha Features
 
-### **Level 1: The Harvest**
-* **Core Mechanics:** Catch falling potatoes to rack up points before the timer hits zero.
-* **Responsive FPS Controls:** Includes modern movement features like sprinting, crouching, and leaning for a fluid experience.
+### **Level 1: The Catch**
+* **Core Mechanics:** Shoot the potato and Channon Wall.
+* **Responsive FPS Controls:** Includes movement features like sprinting for a fluid experience.
 
 ### **Final Boss: The Giant Potato**
 * **Epic Confrontation:** Face the "Giant Potato" bot in a high-stakes arena.
-* **Dynamic Spawning:** The boss deploys burger minions and obstacles at height $Y=2.0$ to disrupt your movement.
-* **Advanced Patrol System:** Features custom waypoint logic where the boss moves in a precise cross-shaped pattern (*Left → Center → Backward → Center*).
+* **Dynamic Spawning:** The boss deploys burger minions and obstacles to kill you.
 
 ---
 
@@ -62,11 +61,11 @@ Special thanks to the creators whose assets helped bring this game to life:
 
 ## 📥 Installation
 1. Navigate to the **Releases** section of this repository.
-2. Download the latest alpha zip file.
-3. Unzip the folder and run `CatchThePotato.exe` (Windows) or the equivalent executable for your OS.
+2. Download the latest zip file.
+3. Unzip the folder and run `CatchThePotato.exe Windows.
 
 ---
-**Note If my Electricity Died or my mum/dad come to close the outlet i am dead**
+**Note If my Electricity Died or my mum/dad come to close the outlet The Game Site is dead**
 **Self Hostted at (https://game.natsumi.space/)**
 
 **Try to find the easter Egg
