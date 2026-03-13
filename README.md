@@ -8,7 +8,7 @@ A fun and fast-paced arcade game built in **Godot**. Test your reflexes by catch
 
 ## ▶️ Media & Gameplay
 Experience the potato-catching madness in action:
-* **Watch:** [Catch the Potato Gameplay Video]([https://youtu.be/oyhjVw1nzLA?si=kv1ptU1gnz3v0SuK](https://youtu.be/JJBtXm6w1ho)) 
+* **Watch:** [Catch the Potato Gameplay Video]https://youtu.be/JJBtXm6w1ho?si=JOLRtiiXK_HKzIki
 
 ---
 
