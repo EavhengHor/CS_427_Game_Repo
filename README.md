@@ -83,7 +83,6 @@ Special thanks to the creators whose assets helped bring this game to life:
 > [!IMPORTANT]
 > **Security Note:** Because the game is currently unsigned, your computer may flag it. 
 > - **Windows:** Click "More Info" then **Run Anyway**.
-> - **macOS:** Right-click the app and select **Open**.
 
 ---
 
