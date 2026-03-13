@@ -40,7 +40,9 @@ Special thanks to the creators whose assets helped bring this game to life:
 
 ### **Audio**
 * **Main Music:** [Pixel Spy vs Spy](https://opengameart.org/content/pixel-spy-vs-spy) by OpenGameArt
+https://opengameart.org/content/pixel-spy-vs-spy
 * **Boss SFX:** [Final Boss Sound](https://pixabay.com/users/freesound_community-46691455/) via Pixabay
+https://pixabay.com/users/freesound_community-46691455/
 
 ### **3D Models & Environment**
 * **Environment:** [KayKit Forest & Mountains Pack](https://kaylousberg.itch.io/kaykit-forest) by Kay Lousberg
