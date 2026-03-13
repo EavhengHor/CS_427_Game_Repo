@@ -76,7 +76,7 @@ Special thanks to the creators whose assets helped bring this game to life:
 
 ## 🚀 Getting Started
 
-1. **Download:** Grab the latest release ZIP file from the [Releases](link-to-your-release-here) section.
+1. **Download:** Grab the latest release ZIP file from the [Releases]([link-to-your-release-here](https://github.com/EavhengHor/CS_427_Game_Repo/releases/tag/V1)) section.
 2. **Unzip:** Extract the folder to your desired location.
 3. **Launch:** Double-click the game executable to start.
 
