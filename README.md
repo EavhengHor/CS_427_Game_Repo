@@ -70,3 +70,13 @@ Special thanks to the creators whose assets helped bring this game to life:
 **Self Hostted at (https://game.natsumi.space/)**
 
 **Try to find the easter Egg
+
+### How to play and run the game
+
+### 1 Download Unzip 2 Run the game 3 Please Run Anyway Because We cannot Sign the game.
+
+### How to play WASD to move. Shoot with left click. P to go to next level after reaching the potato.
+
+### First Level No need to shoot the giant potato avoid/kill the burgers
+
+### Final Level Kill The Boss!
